@@ -1,4 +1,6 @@
-angular.module('<%= appname %>').factory('<%= name %>',function() {
+angular.module('<%= appname %>').service('<%= name %>',function() {
+
+  'use strict';
 
 	var <%= name %> = {};
 

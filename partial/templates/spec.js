@@ -9,9 +9,7 @@ describe('<%= ctrlname %>', function() {
       ctrl = $controller('<%= ctrlname %>', {$scope: scope});
     }));	
 
-	it('should ...', inject(function() {
-
-		expect(1).toEqual(1);
+	xit('should have tests', inject(function() {
 		
 	}));
 

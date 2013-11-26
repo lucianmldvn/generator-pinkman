@@ -2,9 +2,9 @@ describe('<%= name %>', function() {
 
   beforeEach(module('<%= appname %>'));
 
-  it('should ...', inject(function(<%= name %>) {
+  xit('should have tests', inject(function(<%= name %>) {
 
-	//expect(<%= name %>.doSomething()).toEqual('something');
+	  //expect(<%= name %>.doSomething()).to.equal('something');
 
   }));
 

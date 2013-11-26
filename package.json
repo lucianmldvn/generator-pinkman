@@ -1,21 +1,21 @@
 {
-  "name": "generator-cg-angular",
-  "version": "1.0.4",
-  "description": "Yeoman Generator for Enterprise Angular projects.",
+  "name": "generator-mrw-angular",
+  "version": "0.0.9",
+  "description": "Yeoman Generator for Large Angular projects.",
   "keywords": [
     "yeoman-generator"
   ],
-  "homepage": "https://github.com/cgross/generator-cg-angular",
-  "bugs": "https://github.com/cgross/generator-cg-angular/issues",
+  "homepage": "https://github.com/Iteam1337/generator-mrw-angular",
+  "bugs": "https://github.com/Iteam1337/generator-mrw-angular/issues",
   "author": {
-    "name": "Chris Gross",
-    "email": "schtoo@schtoo.com",
-    "url": "https://github.com/cgross"
+    "name": "Johan Öbrink",
+    "email": "johan.obrink@gmail.com",
+    "url": "https://github.com/JohanObrink"
   },
   "main": "app/index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/cgross/generator-cg-angular.git"
+    "url": "git://github.com/Iteam1337/generator-mrw-angular.git"
   },
   "scripts": {
     "test": "mocha"

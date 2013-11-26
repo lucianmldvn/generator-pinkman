@@ -2,11 +2,11 @@ describe('<%= name %>', function() {
 
 	beforeEach(module('<%= appname %>'));
 
-	it('should ...', inject(function($filter) {
+	xit('should have tests', inject(function($filter) {
 
-        var filter = $filter('<%= name %>');
+    var filter = $filter('<%= name %>');
 
-		expect(filter('input')).toEqual('filter result');
+		expect(filter('input')).to.equal('filter result');
 
 	}));
 

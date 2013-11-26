@@ -14,7 +14,7 @@ Features
    * Build uses [grunt-ngmin](https://github.com/btford/grunt-ngmin) so you don't have to use the Angular injection syntax for safe minification (i.e. you dont need `$inject` or `(['$scope','$http',...`.
 * Integrates Bower for package management
 * Includes Yeoman sub-generators for directives, services, partials, and filters
-* Integrates LESS and includes Bootstrap via the source LESS files allowing you to reuse Bootstrap vars/mixins/etc.
+* Integrates LESS.
 * Testable - Included Yeoman sub-generators also build test skeletons using mocha, chai, sinon sinon-chai and karma.
 Run test via `grunt test`.
 

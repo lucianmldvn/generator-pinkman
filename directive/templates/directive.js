@@ -1,4 +1,7 @@
 angular.module('<%= appname %>').directive('<%= _.classify(name) %>', function() {
+
+  'use strict';
+
 	return {
 		restrict: 'E',
 		replace: true,

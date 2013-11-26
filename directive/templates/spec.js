@@ -9,15 +9,13 @@ describe('<%= _.classify(name) %>', function() {
     compile = $compile;
   }));
 
-  it('should ...', function() {
-
+  xit('should have tests', function() {
     /* 
-    To test your directive, you need to create some html that would use your directive,
-    send that through compile() then compare the results.
+      To test your directive, you need to create some html that would use your directive,
+      send that through compile() then compare the results.
 
-    var element = compile('<div mydirective name="name">hi</div>')(scope);
-    expect(element.text()).toBe('hello, world');
+      var element = compile('<div mydirective name="name">hi</div>')(scope);
+      expect(element.text()).to.equal('hello, world');
     */
-
   });
 });
