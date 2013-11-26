@@ -12,7 +12,6 @@
     "browser": true,
     "smarttabs": true,
     "globals": {
-        "jQuery": true,
         "angular": true,
         "console": true,
         "$": true,

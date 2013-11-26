@@ -1,14 +1,20 @@
-angular.module('<%= _.slugify(appname) %>', ['ui.bootstrap','ui']);
+angular.module('<%= _.slugify(appname) %>', ['ui.router', 'ngResource']);
 
-angular.module('<%= _.slugify(appname) %>').config(function($routeProvider) {
+angular.module('<%= _.slugify(appname) %>').config(function($stateProvider, $urlRouterProvider) {
 
-    $routeProvider.
-    /* Add New Routes Above */
-    otherwise({redirectTo:'/home'});
+  'use strict';
+
+  $stateProvider.
+  /* Add New Routes Above */
+  
+  // For any unmatched url, redirect to /
+  $urlRouterProvider.otherwise("/");
 
 });
 
 angular.module('<%= _.slugify(appname) %>').run(function($rootScope) {
+
+  'use strict';
 
 	$rootScope.safeApply = function(fn) {
 		var phase = $rootScope.$$phase;
