@@ -1,6 +1,9 @@
-#generator-cg-angular
+generator-mrw-angular
+---------------------
 
->Yeoman Generator for Enterprise Angular Projects
+#Mr. White Angular generator
+
+>Yeoman Generator for Large Angular Projects
 
 Features
 
@@ -12,7 +15,8 @@ Features
 * Integrates Bower for package management
 * Includes Yeoman sub-generators for directives, services, partials, and filters
 * Integrates LESS and includes Bootstrap via the source LESS files allowing you to reuse Bootstrap vars/mixins/etc.
-* Testable - Included Yeoman sub-generators also build test skeletons.  Run test via `grunt test`.
+* Testable - Included Yeoman sub-generators also build test skeletons using mocha, chai, sinon sinon-chai and karma.
+Run test via `grunt test`.
 
 Directory Layout
 -------------
@@ -31,6 +35,8 @@ Below is an explanation of the folder structure.
             my-directive2.less ..... complex directive LESS
     /filter ........................ angular filters folder
         my-filter.js ............... example filter
+    /model ......................... angular models - a factory implementation of service for non singletons
+        MyModel.js ................. example model. Note the capital first letter in the naming
     /partial ....................... angular partials folder
         /my-partial ................ example partial
             my-partial.html ........ example partial html
@@ -42,7 +48,7 @@ Below is an explanation of the folder structure.
     /bower_component................ 3rd party libraries managed by bower
     /node_modules .................. npm managed libraries used by grunt
 
-The `directive`, `filter`, `partial`, and `service` directories won't exist until one of the relevant components is created using a sub-generator.
+The `directive`, `filter`, `model`, `partial`, and `service` directories won't exist until one of the relevant components is created using a sub-generator.
 
 Getting Started
 -------------
@@ -88,6 +94,7 @@ Running a generator:
     yo cg-angular:directive my-awesome-directive
     yo cg-angular:partial my-partial
     yo cg-angular:service my-service
+    yo cg-angular:model MyModel
     yo cg-angular:filter my-filter
 
 The name paramater passed (i.e. 'my-awesome-directive') will be used for directory and/or file names.  The generators will derive appropriate class names from this parameter (ex. 'my-awesome-directive' will convert to a class name of 'MyAwesomeDirective').
