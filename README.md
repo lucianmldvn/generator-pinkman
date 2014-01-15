@@ -59,13 +59,13 @@ Prerequisites: Node, Grunt, Yeoman, and Bower.  Once Node is installed, do:
 
 Next, install this generator:
 
-    npm install -g generator-cg-angular
+    npm install -g generator-mrw-angular
 
 To create a project:
 
     mkdir MyNewAwesomeApp
     cd MyNewAwesomeApp
-    yo cg-angular
+    yo mrw-angular
 
 Grunt Tasks
 -------------
@@ -91,11 +91,11 @@ There are generators for `directive`,`partial`,`service`, and `filter`.
 
 Running a generator:
 
-    yo cg-angular:directive my-awesome-directive
-    yo cg-angular:partial my-partial
-    yo cg-angular:service my-service
-    yo cg-angular:model MyModel
-    yo cg-angular:filter my-filter
+    yo mrw-angular:directive my-awesome-directive
+    yo mrw-angular:partial my-partial
+    yo mrw-angular:service my-service
+    yo mrw-angular:model MyModel
+    yo mrw-angular:filter my-filter
 
 The name paramater passed (i.e. 'my-awesome-directive') will be used for directory and/or file names.  The generators will derive appropriate class names from this parameter (ex. 'my-awesome-directive' will convert to a class name of 'MyAwesomeDirective').
 
