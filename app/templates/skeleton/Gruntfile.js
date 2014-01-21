@@ -155,7 +155,7 @@ module.exports = function (grunt) {
         }]
       }
     },
-    jasmine: {
+    mochaRunner: {
       unit: {
         src: ['<%%= dom_munger.data.appjs %>','bower_components/angular-mocks/angular-mocks.js'],
         options: {
@@ -177,11 +177,10 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-less');
-  grunt.loadNpmTasks('grunt-contrib-jasmine');
   grunt.loadNpmTasks('grunt-ngmin');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.registerTask('build',['jshint','clean:before','less','dom_munger:readcss','dom_munger:readscripts','ngtemplates','cssmin','concat','ngmin','uglify','copy','dom_munger:removecss','dom_munger:addcss','dom_munger:removescripts','dom_munger:addscript','htmlmin','imagemin','clean:after']);
   grunt.registerTask('server', ['jshint','connect', 'watch']);
-  grunt.registerTask('test',['dom_munger:readscripts','jasmine'])
+  grunt.registerTask('test',['dom_munger:readscripts'])
 };
