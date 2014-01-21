@@ -1,6 +1,6 @@
 {
   "name": "generator-mrw-angular",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Yeoman Generator for Large Angular projects.",
   "keywords": [
     "yeoman-generator"
