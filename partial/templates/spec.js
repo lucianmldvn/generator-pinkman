@@ -1,16 +1,17 @@
-describe('<%= ctrlname %>', function() {
+describe('<%= ctrlname %>', function () {
 
-	beforeEach(module('<%= appname %>'));
+  var scope, ctrl;
 
-	var scope,ctrl;
-
-    beforeEach(inject(function($rootScope, $controller) {
+  beforeEach(function () {
+    module('<%= appname %>');
+    inject(function ($rootScope, $controller) {
       scope = $rootScope.$new();
       ctrl = $controller('<%= ctrlname %>', {$scope: scope});
-    }));	
+    });
+  });
 
-	xit('should have tests', inject(function() {
-		
-	}));
+  xit('should have tests', function () {
+    
+  });
 
 });

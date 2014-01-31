@@ -1,15 +1,16 @@
-describe('<%= _.classify(name) %>', function() {
-
-  beforeEach(module('<%= appname %>'));
+describe('<%= _.classify(name) %>', function () {
 
   var scope,compile;
 
-  beforeEach(inject(function($rootScope,$compile) {
-    scope = $rootScope.$new();
-    compile = $compile;
-  }));
+  beforeEach(function () {
+    module('<%= appname %>');
+    inject(function ($rootScope,$compile) {
+      scope = $rootScope.$new();
+      compile = $compile;
+    });
+  });
 
-  xit('should have tests', function() {
+  xit('should have tests', function () {
     /* 
       To test your directive, you need to create some html that would use your directive,
       send that through compile() then compare the results.
@@ -18,4 +19,5 @@ describe('<%= _.classify(name) %>', function() {
       expect(element.text()).to.equal('hello, world');
     */
   });
+  
 });

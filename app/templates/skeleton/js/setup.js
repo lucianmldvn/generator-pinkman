@@ -1,10 +1,8 @@
 angular.module('<%= _.slugify(appname) %>', ['ui.router', 'ngResource']);
 
-angular.module('<%= _.slugify(appname) %>').config(function($stateProvider, $urlRouterProvider) {
-
+angular.module('<%= _.slugify(appname) %>').config(function ($stateProvider, $urlRouterProvider) {
   'use strict';
 
-  $stateProvider.
   /* Add New Routes Above */
   
   // For any unmatched url, redirect to /
@@ -12,19 +10,18 @@ angular.module('<%= _.slugify(appname) %>').config(function($stateProvider, $url
 
 });
 
-angular.module('<%= _.slugify(appname) %>').run(function($rootScope) {
-
+angular.module('<%= _.slugify(appname) %>').run(function ($rootScope) {
   'use strict';
 
-	$rootScope.safeApply = function(fn) {
-		var phase = $rootScope.$$phase;
-		if (phase === '$apply' || phase === '$digest') {
-			if (fn && (typeof(fn) === 'function')) {
-				fn();
-			}
-		} else {
-			this.$apply(fn);
-		}
-	};
+  $rootScope.safeApply = function (fn) {
+    var phase = $rootScope.$$phase;
+    if (phase === '$apply' || phase === '$digest') {
+      if (fn && (typeof(fn) === 'function')) {
+        fn();
+      }
+    } else {
+      this.$apply(fn);
+    }
+  };
 
 });

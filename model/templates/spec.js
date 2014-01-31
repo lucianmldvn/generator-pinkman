@@ -1,11 +1,16 @@
-describe('<%= name %>', function() {
+describe('<%= name %>', function () {
 
-  beforeEach(module('<%= appname %>'));
+  var <%= name %>;
 
-  it('can be instansiated', inject(function(<%= name %>) {
+  beforeEach(function () {
+    module('<%= appname %>');
+    inject(function (_<%= name %>_) {
+      <%= name %> = _<%= name %>_;
+    });
+  });
 
-	  expect(new <%= name %>()).to.be.instanceof(<%= name %>);
-
-  }));
+  it('can be instantiated', function () {
+    expect(new <%= name %>()).to.be.instanceof(<%= name %>);
+  });
 
 });

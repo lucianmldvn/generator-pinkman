@@ -1,11 +1,16 @@
-describe('<%= name %>', function() {
+describe('<%= name %>', function () {
 
-  beforeEach(module('<%= appname %>'));
+  var <%= name %>;
 
-  xit('should have tests', inject(function(<%= name %>) {
+  beforeEach(function () {
+    module('<%= appname %>');
+    inject(function (_<%= name %>_) {
+      <%= name %> = _<%= name %>_;
+    });
+  });
 
-	  //expect(<%= name %>.doSomething()).to.equal('something');
-
-  }));
+  xit('should have tests', function () {
+    //expect(<%= name %>.doSomething()).to.equal('something');
+  });
 
 });

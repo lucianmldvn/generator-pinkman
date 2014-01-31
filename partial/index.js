@@ -10,55 +10,59 @@ _.mixin(_.str.exports());
 
 var PartialGenerator = module.exports = function PartialGenerator(args, options, config) {
 
-	yeoman.generators.NamedBase.apply(this, arguments);
+  yeoman.generators.NamedBase.apply(this, arguments);
 
-	try {
-		this.appname = require(path.join(process.cwd(), 'package.json')).name;
-	} catch (e) {
-		this.appname = 'Cant find name from package.json';
-	}
+  try {
+    this.appname = require(path.join(process.cwd(), 'package.json')).name;
+  } catch (e) {
+    this.appname = 'Cant find name from package.json';
+  }
 
 };
 
 util.inherits(PartialGenerator, yeoman.generators.NamedBase);
 
 PartialGenerator.prototype.askFor = function askFor() {
-	var cb = this.async();
+  var cb = this.async();
 
-	var prompts = [{
-		name: 'route',
-		message: 'Enter your route name (i.e. /mypartial/:id).  If you don\'t want a route added for you, leave this empty.'
-	}];
+  var prompts = [{
+    name: 'route',
+    message: 'Enter your route name (i.e. /mypartial/:id).  If you don\'t want a route added for you, leave this empty.'
+  }];
 
-	this.prompt(prompts, function (props) {
-		this.route = props.route;
+  this.prompt(prompts, function (props) {
+    this.route = props.route;
 
-		cb();
-	}.bind(this));
+    cb();
+  }.bind(this));
 };
 
 PartialGenerator.prototype.files = function files() {
 
-	this.ctrlname = _.classify(this.name) + 'Ctrl';
+  this.ctrlname = _.capitalize(_.camelize(this.name)) + 'Ctrl';
 
-	this.template('partial.js', 'partial/'+this.name+'/'+this.name+'.js');
-	this.template('partial.html', 'partial/'+this.name+'/'+this.name+'.html');
-	this.template('partial.less', 'partial/'+this.name+'/'+this.name+'.less');
-	this.template('spec.js', 'test/unit/controller/'+this.name+'.js');
+  this.template('partial.js', 'partial/'+this.name+'/'+this.name+'.js');
+  this.template('partial.html', 'partial/'+this.name+'/'+this.name+'.html');
+  this.template('partial.less', 'partial/'+this.name+'/'+this.name+'.less');
+  this.template('spec.js', 'test/unit/controller/'+this.name+'.js');
 
-	cgUtils.addToFile('index.html','<script src="partial/'+this.name+'/'+this.name+'.js"></script>',cgUtils.PARTIAL_JS_MARKER,'  ');
-	this.log.writeln(' updating'.green + ' %s','index.html');
+  cgUtils.addToFile('index.html','<script src="partial/'+this.name+'/'+this.name+'.js"></script>',cgUtils.PARTIAL_JS_MARKER,'  ');
 
-	cgUtils.addToFile('css/app.less','@import "../partial/'+this.name+'/'+this.name+'.less";',cgUtils.PARTIAL_LESS_MARKER,'');
-	this.log.writeln(' updating'.green + ' %s','app/app.less');
+  cgUtils.addToFile('test/unit/index.html','<script src="../../partial/'+this.name+'/'+this.name+'.js"></script>',cgUtils.PARTIAL_JS_MARKER,'  ');
+  cgUtils.addToFile('test/unit/index.html','<script src="controller/'+this.name+'.js"></script>',cgUtils.PARTIAL_JS_TEST_MARKER,'  ');
+  
+  this.log.writeln(' updating'.green + ' %s','index.html');
 
-	if (this.route && this.route.length > 0){
-		cgUtils.addToFile('js/setup.js','when(\''+this.route+'\',{templateUrl: \'partial/'+this.name+'/'+this.name+'.html\'}).',cgUtils.ROUTE_MARKER,'\t');
-		this.log.writeln(' updating'.green + ' %s','js/setup.js');
-	}
+  cgUtils.addToFile('css/app.less','@import "../partial/'+this.name+'/'+this.name+'.less";',cgUtils.PARTIAL_LESS_MARKER,'');
+  this.log.writeln(' updating'.green + ' %s','app/app.less');
 
-	/*
-		.state('state1', {
+  if (this.route && this.route.length > 0){
+    cgUtils.addToFile('js/setup.js','$stateProvider.state(\''+this.route+'\', {\r    templateUrl: \'partial/'+this.name+'/'+this.name+'.html\'\r  });',cgUtils.ROUTE_MARKER,'\t');
+    this.log.writeln(' updating'.green + ' %s','js/setup.js');
+  }
+
+  /*
+    .state('state1', {
       url: "/state1",
       templateUrl: "partials/state1.html"
     })
@@ -70,6 +74,6 @@ PartialGenerator.prototype.files = function files() {
       url: "/state2",
       templateUrl: "partials/state2.html"
     })
-	 */
+   */
 
 };

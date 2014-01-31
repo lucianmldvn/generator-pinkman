@@ -1,13 +1,16 @@
-describe('<%= name %>', function() {
+describe('<%= name %>', function () {
 
-	beforeEach(module('<%= appname %>'));
+  var filter;
 
-	xit('should have tests', inject(function($filter) {
+  beforeEach(function () {
+    module('<%= appname %>');
+    inject(function ($filter) {
+      filter = $filter('<%= name %>');
+    });
+  });
 
-    var filter = $filter('<%= name %>');
-
-		expect(filter('input')).to.equal('filter result');
-
-	}));
+  xit('should have tests', function () {
+    expect(filter('input')).to.equal('filter result');
+  });
 
 });

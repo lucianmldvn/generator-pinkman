@@ -1,8 +1,7 @@
-angular.module('<%= appname %>').factory('<%= name %>',function() {
-
+angular.module('<%= appname %>').factory('<%= name %>', function () {
   'use strict';
 
-	function <%= name %>() {
+  function <%= name %>() {
 
   }
 
@@ -10,5 +9,5 @@ angular.module('<%= appname %>').factory('<%= name %>',function() {
   //    
   // }
 
-	return <%= name %>;
+  return <%= name %>;
 });
