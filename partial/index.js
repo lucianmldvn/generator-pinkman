@@ -10,6 +10,7 @@ _.mixin(_.str.exports());
 
 var PartialGenerator = module.exports = function PartialGenerator(args, options, config) {
 
+  this.log.writeln(args);
   yeoman.generators.NamedBase.apply(this, arguments);
 
   try {
@@ -25,12 +26,15 @@ util.inherits(PartialGenerator, yeoman.generators.NamedBase);
 PartialGenerator.prototype.askFor = function askFor() {
   var cb = this.async();
 
-  var prompts = [{
-    name: 'route',
-    message: 'Enter your route name (i.e. /mypartial/:id).  If you don\'t want a route added for you, leave this empty.'
-  }];
+  var prompts = [
+    {
+      name: 'route',
+      message: 'Enter your route url (i.e. /mypartial/:id).  If you don\'t want a route added for you, leave this empty.'
+    }
+  ];
 
   this.prompt(prompts, function (props) {
+    this.routeName = props.routeName;
     this.route = props.route;
 
     cb();
@@ -57,7 +61,13 @@ PartialGenerator.prototype.files = function files() {
   this.log.writeln(' updating'.green + ' %s','app/app.less');
 
   if (this.route && this.route.length > 0){
-    cgUtils.addToFile('js/setup.js','$stateProvider.state(\''+this.route+'\', {\r    templateUrl: \'partial/'+this.name+'/'+this.name+'.html\'\r  });',cgUtils.ROUTE_MARKER,'\t');
+    var js = [
+      "$stateProvider.state('" + _.slugify(this.name) + "', {",
+      "    url: '" + this.route + "',",
+      "    templateUrl: 'partial/" + this.name + "/" + this.name + ".html'",
+      "  });"
+    ];
+    cgUtils.addToFile('js/setup.js', js.join('\r'), cgUtils.ROUTE_MARKER,'\t');
     this.log.writeln(' updating'.green + ' %s','js/setup.js');
   }
 
