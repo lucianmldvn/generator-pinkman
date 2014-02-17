@@ -1,23 +1,21 @@
-describe('<%= _.classify(name) %>', function () {
+describe('<%= name %>', function () {
 
-  var scope,compile;
+  var $compile, $templateCache, outerScope, scope, element;
 
   beforeEach(function () {
     module('<%= appname %>');
-    inject(function ($rootScope,$compile) {
+    inject(function ($rootScope, _$compile_, _$templateCache_) {
       scope = $rootScope.$new();
-      compile = $compile;
+      $compile = _$compile_;
+      $templateCache = _$templateCache_;
     });
+
+    $templateCache.put('directive/<%= name %>/<%= name %>.html', '<div></div>');
+    element = $compile('<<%= name %>></<%= name %>>')(outerScope);
+    outerScope.$digest();
+    scope = element.isolateScope();
   });
 
-  xit('should have tests', function () {
-    /* 
-      To test your directive, you need to create some html that would use your directive,
-      send that through compile() then compare the results.
-
-      var element = compile('<div mydirective name="name">hi</div>')(scope);
-      expect(element.text()).to.equal('hello, world');
-    */
-  });
+  it('should have tests');
   
 });
