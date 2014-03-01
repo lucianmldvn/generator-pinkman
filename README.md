@@ -61,7 +61,7 @@ Prerequisites: Node, Grunt, Yeoman, and Bower.  Once Node is installed, do:
 
 Next, install this generator:
 
-    npm install -g generator-mrw-angular
+    npm install -g generator-mrwhite
 
 To create a project:
 
