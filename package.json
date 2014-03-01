@@ -1,12 +1,13 @@
 {
   "name": "generator-mrw-angular",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "description": "Yeoman Generator for Large Angular projects.",
   "keywords": [
-    "yeoman-generator"
+    "yeoman-generator",
+    "angular"
   ],
-  "homepage": "https://github.com/Iteam1337/generator-mrw-angular",
-  "bugs": "https://github.com/Iteam1337/generator-mrw-angular/issues",
+  "homepage": "https://github.com/Iteam1337/generator-mrwhite",
+  "bugs": "https://github.com/Iteam1337/generator-mrwhite/issues",
   "author": {
     "name": "Johan Öbrink",
     "email": "johan.obrink@gmail.com",
@@ -15,7 +16,7 @@
   "main": "app/index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/Iteam1337/generator-mrw-angular.git"
+    "url": "git://github.com/Iteam1337/generator-mrwhite.git"
   },
   "scripts": {
     "test": "mocha"
