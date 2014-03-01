@@ -1,0 +1,298 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node',
+1 verbose cli   '/Users/jok/.nvm/v0.10.22/bin/npm',
+1 verbose cli   'publish',
+1 verbose cli   'https://github.com/Iteam1337/generator-mrwhite/archive/v0.1.2.tar.gz' ]
+2 info using npm@1.3.22
+3 info using node@v0.10.22
+4 verbose publish [ 'https://github.com/Iteam1337/generator-mrwhite/archive/v0.1.2.tar.gz' ]
+5 verbose cache add [ 'https://github.com/Iteam1337/generator-mrwhite/archive/v0.1.2.tar.gz',
+5 verbose cache add   null ]
+6 verbose cache add name=undefined spec="https://github.com/Iteam1337/generator-mrwhite/archive/v0.1.2.tar.gz" args=["https://github.com/Iteam1337/generator-mrwhite/archive/v0.1.2.tar.gz",null]
+7 verbose parsed url { protocol: 'https:',
+7 verbose parsed url   slashes: true,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: 'github.com',
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: 'github.com',
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: '/Iteam1337/generator-mrwhite/archive/v0.1.2.tar.gz',
+7 verbose parsed url   path: '/Iteam1337/generator-mrwhite/archive/v0.1.2.tar.gz',
+7 verbose parsed url   href: 'https://github.com/Iteam1337/generator-mrwhite/archive/v0.1.2.tar.gz' }
+8 silly lockFile 8cc7437e-or-mrwhite-archive-v0-1-2-tar-gz https://github.com/Iteam1337/generator-mrwhite/archive/v0.1.2.tar.gz
+9 verbose lock https://github.com/Iteam1337/generator-mrwhite/archive/v0.1.2.tar.gz /Users/jok/.npm/8cc7437e-or-mrwhite-archive-v0-1-2-tar-gz.lock
+10 verbose addRemoteTarball [ 'https://github.com/Iteam1337/generator-mrwhite/archive/v0.1.2.tar.gz',
+10 verbose addRemoteTarball   null ]
+11 info retry fetch attempt 1 at 13:35:41
+12 verbose fetch to= /var/folders/57/80jfscwj0g36pj1r1vqx9zxhmx025v/T/npm-65285-GbshB6Ly/1393677341752-0.28062761295586824/tmp.tgz
+13 http GET https://github.com/Iteam1337/generator-mrwhite/archive/v0.1.2.tar.gz
+14 http 200 https://github.com/Iteam1337/generator-mrwhite/archive/v0.1.2.tar.gz
+15 verbose tar unpack /var/folders/57/80jfscwj0g36pj1r1vqx9zxhmx025v/T/npm-65285-GbshB6Ly/1393677341752-0.28062761295586824/tmp.tgz
+16 silly lockFile 9085a14b-1752-0-28062761295586824-package tar:///var/folders/57/80jfscwj0g36pj1r1vqx9zxhmx025v/T/npm-65285-GbshB6Ly/1393677341752-0.28062761295586824/package
+17 verbose lock tar:///var/folders/57/80jfscwj0g36pj1r1vqx9zxhmx025v/T/npm-65285-GbshB6Ly/1393677341752-0.28062761295586824/package /Users/jok/.npm/9085a14b-1752-0-28062761295586824-package.lock
+18 silly lockFile d2b5c72b-1752-0-28062761295586824-tmp-tgz tar:///var/folders/57/80jfscwj0g36pj1r1vqx9zxhmx025v/T/npm-65285-GbshB6Ly/1393677341752-0.28062761295586824/tmp.tgz
+19 verbose lock tar:///var/folders/57/80jfscwj0g36pj1r1vqx9zxhmx025v/T/npm-65285-GbshB6Ly/1393677341752-0.28062761295586824/tmp.tgz /Users/jok/.npm/d2b5c72b-1752-0-28062761295586824-tmp-tgz.lock
+20 silly gunzTarPerm modes [ '755', '644' ]
+21 silly gunzTarPerm extractEntry
+22 silly gunzTarPerm modified mode [ '', 509, 493 ]
+23 silly gunzTarPerm extractEntry .editorconfig
+24 silly gunzTarPerm modified mode [ '.editorconfig', 436, 420 ]
+25 silly gunzTarPerm extractEntry .gitattributes
+26 silly gunzTarPerm modified mode [ '.gitattributes', 436, 420 ]
+27 silly gunzTarPerm extractEntry .gitignore
+28 silly gunzTarPerm modified mode [ '.gitignore', 436, 420 ]
+29 silly gunzTarPerm extractEntry .jshintrc
+30 silly gunzTarPerm modified mode [ '.jshintrc', 436, 420 ]
+31 silly gunzTarPerm extractEntry .travis.yml
+32 silly gunzTarPerm modified mode [ '.travis.yml', 436, 420 ]
+33 silly gunzTarPerm extractEntry LICENSE
+34 silly gunzTarPerm modified mode [ 'LICENSE', 436, 420 ]
+35 silly gunzTarPerm extractEntry README.md
+36 silly gunzTarPerm modified mode [ 'README.md', 436, 420 ]
+37 silly gunzTarPerm extractEntry app/
+38 silly gunzTarPerm modified mode [ 'app/', 509, 493 ]
+39 silly gunzTarPerm extractEntry app/index.js
+40 silly gunzTarPerm modified mode [ 'app/index.js', 436, 420 ]
+41 silly gunzTarPerm extractEntry app/templates/
+42 silly gunzTarPerm modified mode [ 'app/templates/', 509, 493 ]
+43 silly gunzTarPerm extractEntry app/templates/skeleton/
+44 silly gunzTarPerm modified mode [ 'app/templates/skeleton/', 509, 493 ]
+45 silly gunzTarPerm extractEntry app/templates/skeleton/.bowerrc
+46 silly gunzTarPerm modified mode [ 'app/templates/skeleton/.bowerrc', 436, 420 ]
+47 silly gunzTarPerm extractEntry app/templates/skeleton/.editorconfig
+48 silly gunzTarPerm modified mode [ 'app/templates/skeleton/.editorconfig', 436, 420 ]
+49 silly gunzTarPerm extractEntry app/templates/skeleton/.jshintrc
+50 silly gunzTarPerm modified mode [ 'app/templates/skeleton/.jshintrc', 436, 420 ]
+51 silly gunzTarPerm extractEntry app/templates/skeleton/Gruntfile.js
+52 silly gunzTarPerm modified mode [ 'app/templates/skeleton/Gruntfile.js', 436, 420 ]
+53 silly gunzTarPerm extractEntry app/templates/skeleton/bower.json
+54 silly gunzTarPerm modified mode [ 'app/templates/skeleton/bower.json', 436, 420 ]
+55 silly gunzTarPerm extractEntry app/templates/skeleton/css/
+56 silly gunzTarPerm modified mode [ 'app/templates/skeleton/css/', 509, 493 ]
+57 silly gunzTarPerm extractEntry app/templates/skeleton/css/app.less
+58 silly gunzTarPerm modified mode [ 'app/templates/skeleton/css/app.less', 436, 420 ]
+59 silly gunzTarPerm extractEntry app/templates/skeleton/index.html
+60 silly gunzTarPerm modified mode [ 'app/templates/skeleton/index.html', 436, 420 ]
+61 silly gunzTarPerm extractEntry app/templates/skeleton/js/
+62 silly gunzTarPerm modified mode [ 'app/templates/skeleton/js/', 509, 493 ]
+63 silly gunzTarPerm extractEntry app/templates/skeleton/js/setup.js
+64 silly gunzTarPerm modified mode [ 'app/templates/skeleton/js/setup.js', 436, 420 ]
+65 silly gunzTarPerm extractEntry app/templates/skeleton/package.json
+66 silly gunzTarPerm modified mode [ 'app/templates/skeleton/package.json', 436, 420 ]
+67 silly gunzTarPerm extractEntry app/templates/skeleton/test/
+68 silly gunzTarPerm modified mode [ 'app/templates/skeleton/test/', 509, 493 ]
+69 silly gunzTarPerm extractEntry app/templates/skeleton/test/unit/
+70 silly gunzTarPerm modified mode [ 'app/templates/skeleton/test/unit/', 509, 493 ]
+71 silly gunzTarPerm extractEntry app/templates/skeleton/test/unit/index.html
+72 silly gunzTarPerm modified mode [ 'app/templates/skeleton/test/unit/index.html', 436, 420 ]
+73 silly gunzTarPerm extractEntry directive/
+74 silly gunzTarPerm modified mode [ 'directive/', 509, 493 ]
+75 silly gunzTarPerm extractEntry directive/index.js
+76 silly gunzTarPerm modified mode [ 'directive/index.js', 436, 420 ]
+77 silly gunzTarPerm extractEntry directive/templates/
+78 silly gunzTarPerm modified mode [ 'directive/templates/', 509, 493 ]
+79 silly gunzTarPerm extractEntry directive/templates/directive.html
+80 silly gunzTarPerm modified mode [ 'directive/templates/directive.html', 436, 420 ]
+81 silly gunzTarPerm extractEntry directive/templates/directive.js
+82 silly gunzTarPerm modified mode [ 'directive/templates/directive.js', 436, 420 ]
+83 silly gunzTarPerm extractEntry directive/templates/directive.less
+84 silly gunzTarPerm modified mode [ 'directive/templates/directive.less', 436, 420 ]
+85 silly gunzTarPerm extractEntry directive/templates/directive_simple.js
+86 silly gunzTarPerm modified mode [ 'directive/templates/directive_simple.js', 436, 420 ]
+87 silly gunzTarPerm extractEntry directive/templates/spec.js
+88 silly gunzTarPerm modified mode [ 'directive/templates/spec.js', 436, 420 ]
+89 silly gunzTarPerm extractEntry directive/templates/spec_simple.js
+90 silly gunzTarPerm modified mode [ 'directive/templates/spec_simple.js', 436, 420 ]
+91 silly gunzTarPerm extractEntry filter/
+92 silly gunzTarPerm modified mode [ 'filter/', 509, 493 ]
+93 silly gunzTarPerm extractEntry filter/index.js
+94 silly gunzTarPerm modified mode [ 'filter/index.js', 436, 420 ]
+95 silly gunzTarPerm extractEntry filter/templates/
+96 silly gunzTarPerm modified mode [ 'filter/templates/', 509, 493 ]
+97 silly gunzTarPerm extractEntry filter/templates/filter.js
+98 silly gunzTarPerm modified mode [ 'filter/templates/filter.js', 436, 420 ]
+99 silly gunzTarPerm extractEntry filter/templates/spec.js
+100 silly gunzTarPerm modified mode [ 'filter/templates/spec.js', 436, 420 ]
+101 silly gunzTarPerm extractEntry model/
+102 silly gunzTarPerm modified mode [ 'model/', 509, 493 ]
+103 silly gunzTarPerm extractEntry model/index.js
+104 silly gunzTarPerm modified mode [ 'model/index.js', 436, 420 ]
+105 silly gunzTarPerm extractEntry model/templates/
+106 silly gunzTarPerm modified mode [ 'model/templates/', 509, 493 ]
+107 silly gunzTarPerm extractEntry model/templates/model.js
+108 silly gunzTarPerm modified mode [ 'model/templates/model.js', 436, 420 ]
+109 silly gunzTarPerm extractEntry model/templates/spec.js
+110 silly gunzTarPerm modified mode [ 'model/templates/spec.js', 436, 420 ]
+111 silly gunzTarPerm extractEntry package.json
+112 silly gunzTarPerm modified mode [ 'package.json', 436, 420 ]
+113 silly gunzTarPerm extractEntry partial/
+114 silly gunzTarPerm modified mode [ 'partial/', 509, 493 ]
+115 silly gunzTarPerm extractEntry partial/index.js
+116 silly gunzTarPerm modified mode [ 'partial/index.js', 436, 420 ]
+117 silly gunzTarPerm extractEntry partial/templates/
+118 silly gunzTarPerm modified mode [ 'partial/templates/', 509, 493 ]
+119 silly gunzTarPerm extractEntry partial/templates/partial.html
+120 silly gunzTarPerm modified mode [ 'partial/templates/partial.html', 436, 420 ]
+121 silly gunzTarPerm extractEntry partial/templates/partial.js
+122 silly gunzTarPerm modified mode [ 'partial/templates/partial.js', 436, 420 ]
+123 silly gunzTarPerm extractEntry partial/templates/partial.less
+124 silly gunzTarPerm modified mode [ 'partial/templates/partial.less', 436, 420 ]
+125 silly gunzTarPerm extractEntry partial/templates/spec.js
+126 silly gunzTarPerm modified mode [ 'partial/templates/spec.js', 436, 420 ]
+127 silly gunzTarPerm extractEntry service/
+128 silly gunzTarPerm modified mode [ 'service/', 509, 493 ]
+129 silly gunzTarPerm extractEntry service/index.js
+130 silly gunzTarPerm modified mode [ 'service/index.js', 436, 420 ]
+131 silly gunzTarPerm extractEntry service/templates/
+132 silly gunzTarPerm modified mode [ 'service/templates/', 509, 493 ]
+133 silly gunzTarPerm extractEntry service/templates/service.js
+134 silly gunzTarPerm modified mode [ 'service/templates/service.js', 436, 420 ]
+135 silly gunzTarPerm extractEntry service/templates/spec.js
+136 silly gunzTarPerm modified mode [ 'service/templates/spec.js', 436, 420 ]
+137 silly gunzTarPerm extractEntry test/
+138 silly gunzTarPerm modified mode [ 'test/', 509, 493 ]
+139 silly gunzTarPerm extractEntry test/test-creation.js
+140 silly gunzTarPerm modified mode [ 'test/test-creation.js', 436, 420 ]
+141 silly gunzTarPerm extractEntry test/test-load.js
+142 silly gunzTarPerm modified mode [ 'test/test-load.js', 436, 420 ]
+143 silly gunzTarPerm extractEntry utils.js
+144 silly gunzTarPerm modified mode [ 'utils.js', 436, 420 ]
+145 silly lockFile 9085a14b-1752-0-28062761295586824-package tar:///var/folders/57/80jfscwj0g36pj1r1vqx9zxhmx025v/T/npm-65285-GbshB6Ly/1393677341752-0.28062761295586824/package
+146 silly lockFile 9085a14b-1752-0-28062761295586824-package tar:///var/folders/57/80jfscwj0g36pj1r1vqx9zxhmx025v/T/npm-65285-GbshB6Ly/1393677341752-0.28062761295586824/package
+147 silly lockFile d2b5c72b-1752-0-28062761295586824-tmp-tgz tar:///var/folders/57/80jfscwj0g36pj1r1vqx9zxhmx025v/T/npm-65285-GbshB6Ly/1393677341752-0.28062761295586824/tmp.tgz
+148 silly lockFile d2b5c72b-1752-0-28062761295586824-tmp-tgz tar:///var/folders/57/80jfscwj0g36pj1r1vqx9zxhmx025v/T/npm-65285-GbshB6Ly/1393677341752-0.28062761295586824/tmp.tgz
+149 verbose tar pack [ '/Users/jok/.npm/generator-mrwhite/0.1.1/package.tgz',
+149 verbose tar pack   '/var/folders/57/80jfscwj0g36pj1r1vqx9zxhmx025v/T/npm-65285-GbshB6Ly/1393677341752-0.28062761295586824/package' ]
+150 verbose tarball /Users/jok/.npm/generator-mrwhite/0.1.1/package.tgz
+151 verbose folder /var/folders/57/80jfscwj0g36pj1r1vqx9zxhmx025v/T/npm-65285-GbshB6Ly/1393677341752-0.28062761295586824/package
+152 silly lockFile 9085a14b-1752-0-28062761295586824-package tar:///var/folders/57/80jfscwj0g36pj1r1vqx9zxhmx025v/T/npm-65285-GbshB6Ly/1393677341752-0.28062761295586824/package
+153 verbose lock tar:///var/folders/57/80jfscwj0g36pj1r1vqx9zxhmx025v/T/npm-65285-GbshB6Ly/1393677341752-0.28062761295586824/package /Users/jok/.npm/9085a14b-1752-0-28062761295586824-package.lock
+154 silly lockFile 7902d437-erator-mrwhite-0-1-1-package-tgz tar:///Users/jok/.npm/generator-mrwhite/0.1.1/package.tgz
+155 verbose lock tar:///Users/jok/.npm/generator-mrwhite/0.1.1/package.tgz /Users/jok/.npm/7902d437-erator-mrwhite-0-1-1-package-tgz.lock
+156 silly lockFile 9085a14b-1752-0-28062761295586824-package tar:///var/folders/57/80jfscwj0g36pj1r1vqx9zxhmx025v/T/npm-65285-GbshB6Ly/1393677341752-0.28062761295586824/package
+157 silly lockFile 9085a14b-1752-0-28062761295586824-package tar:///var/folders/57/80jfscwj0g36pj1r1vqx9zxhmx025v/T/npm-65285-GbshB6Ly/1393677341752-0.28062761295586824/package
+158 silly lockFile 7902d437-erator-mrwhite-0-1-1-package-tgz tar:///Users/jok/.npm/generator-mrwhite/0.1.1/package.tgz
+159 silly lockFile 7902d437-erator-mrwhite-0-1-1-package-tgz tar:///Users/jok/.npm/generator-mrwhite/0.1.1/package.tgz
+160 silly lockFile 0591c3b4--generator-mrwhite-0-1-1-package /Users/jok/.npm/generator-mrwhite/0.1.1/package
+161 verbose lock /Users/jok/.npm/generator-mrwhite/0.1.1/package /Users/jok/.npm/0591c3b4--generator-mrwhite-0-1-1-package.lock
+162 silly lockFile 0591c3b4--generator-mrwhite-0-1-1-package /Users/jok/.npm/generator-mrwhite/0.1.1/package
+163 silly lockFile 0591c3b4--generator-mrwhite-0-1-1-package /Users/jok/.npm/generator-mrwhite/0.1.1/package
+164 verbose tar unpack /Users/jok/.npm/generator-mrwhite/0.1.1/package.tgz
+165 silly lockFile 8647f456--generator-mrwhite-0-1-1-package tar:///Users/jok/.npm/generator-mrwhite/0.1.1/package
+166 verbose lock tar:///Users/jok/.npm/generator-mrwhite/0.1.1/package /Users/jok/.npm/8647f456--generator-mrwhite-0-1-1-package.lock
+167 silly lockFile 7902d437-erator-mrwhite-0-1-1-package-tgz tar:///Users/jok/.npm/generator-mrwhite/0.1.1/package.tgz
+168 verbose lock tar:///Users/jok/.npm/generator-mrwhite/0.1.1/package.tgz /Users/jok/.npm/7902d437-erator-mrwhite-0-1-1-package-tgz.lock
+169 silly gunzTarPerm modes [ '755', '644' ]
+170 silly gunzTarPerm extractEntry package.json
+171 silly gunzTarPerm extractEntry .npmignore
+172 silly gunzTarPerm extractEntry README.md
+173 silly gunzTarPerm extractEntry LICENSE
+174 silly gunzTarPerm extractEntry utils.js
+175 silly gunzTarPerm extractEntry .editorconfig
+176 silly gunzTarPerm extractEntry .jshintrc
+177 silly gunzTarPerm extractEntry app/index.js
+178 silly gunzTarPerm extractEntry app/templates/skeleton/package.json
+179 silly gunzTarPerm extractEntry app/templates/skeleton/Gruntfile.js
+180 silly gunzTarPerm extractEntry app/templates/skeleton/.bowerrc
+181 silly gunzTarPerm extractEntry app/templates/skeleton/.editorconfig
+182 silly gunzTarPerm extractEntry app/templates/skeleton/.jshintrc
+183 silly gunzTarPerm extractEntry app/templates/skeleton/bower.json
+184 silly gunzTarPerm extractEntry app/templates/skeleton/css/app.less
+185 silly gunzTarPerm extractEntry app/templates/skeleton/index.html
+186 silly gunzTarPerm extractEntry app/templates/skeleton/js/setup.js
+187 silly gunzTarPerm extractEntry app/templates/skeleton/test/unit/index.html
+188 silly gunzTarPerm extractEntry .gitattributes
+189 silly gunzTarPerm extractEntry filter/index.js
+190 silly gunzTarPerm extractEntry filter/templates/filter.js
+191 silly gunzTarPerm extractEntry filter/templates/spec.js
+192 silly gunzTarPerm extractEntry model/index.js
+193 silly gunzTarPerm extractEntry model/templates/model.js
+194 silly gunzTarPerm extractEntry model/templates/spec.js
+195 silly gunzTarPerm extractEntry .travis.yml
+196 silly gunzTarPerm extractEntry partial/index.js
+197 silly gunzTarPerm extractEntry partial/templates/partial.js
+198 silly gunzTarPerm extractEntry partial/templates/spec.js
+199 silly gunzTarPerm extractEntry partial/templates/partial.html
+200 silly gunzTarPerm extractEntry partial/templates/partial.less
+201 silly gunzTarPerm extractEntry service/index.js
+202 silly gunzTarPerm extractEntry service/templates/service.js
+203 silly gunzTarPerm extractEntry service/templates/spec.js
+204 silly gunzTarPerm extractEntry test/test-creation.js
+205 silly gunzTarPerm extractEntry test/test-load.js
+206 silly gunzTarPerm extractEntry directive/index.js
+207 silly gunzTarPerm extractEntry directive/templates/directive.js
+208 silly gunzTarPerm extractEntry directive/templates/directive_simple.js
+209 silly gunzTarPerm extractEntry directive/templates/spec.js
+210 silly gunzTarPerm extractEntry directive/templates/spec_simple.js
+211 silly gunzTarPerm extractEntry directive/templates/directive.html
+212 silly gunzTarPerm extractEntry directive/templates/directive.less
+213 silly lockFile 8647f456--generator-mrwhite-0-1-1-package tar:///Users/jok/.npm/generator-mrwhite/0.1.1/package
+214 silly lockFile 8647f456--generator-mrwhite-0-1-1-package tar:///Users/jok/.npm/generator-mrwhite/0.1.1/package
+215 silly lockFile 7902d437-erator-mrwhite-0-1-1-package-tgz tar:///Users/jok/.npm/generator-mrwhite/0.1.1/package.tgz
+216 silly lockFile 7902d437-erator-mrwhite-0-1-1-package-tgz tar:///Users/jok/.npm/generator-mrwhite/0.1.1/package.tgz
+217 verbose chmod /Users/jok/.npm/generator-mrwhite/0.1.1/package.tgz 644
+218 verbose chown /Users/jok/.npm/generator-mrwhite/0.1.1/package.tgz [ 701499579, 1732664586 ]
+219 silly lockFile 8cc7437e-or-mrwhite-archive-v0-1-2-tar-gz https://github.com/Iteam1337/generator-mrwhite/archive/v0.1.2.tar.gz
+220 silly lockFile 8cc7437e-or-mrwhite-archive-v0-1-2-tar-gz https://github.com/Iteam1337/generator-mrwhite/archive/v0.1.2.tar.gz
+221 silly publish { name: 'generator-mrwhite',
+221 silly publish   version: '0.1.1',
+221 silly publish   description: 'Yeoman Generator for Large Angular projects.',
+221 silly publish   keywords: [ 'yeoman-generator', 'angular' ],
+221 silly publish   homepage: 'https://github.com/Iteam1337/generator-mrwhite',
+221 silly publish   bugs: { url: 'https://github.com/Iteam1337/generator-mrwhite/issues' },
+221 silly publish   author:
+221 silly publish    { name: 'Johan Öbrink',
+221 silly publish      email: 'johan.obrink@gmail.com',
+221 silly publish      url: 'https://github.com/JohanObrink' },
+221 silly publish   main: 'app/index.js',
+221 silly publish   repository:
+221 silly publish    { type: 'git',
+221 silly publish      url: 'git://github.com/Iteam1337/generator-mrwhite.git' },
+221 silly publish   scripts: { test: 'mocha' },
+221 silly publish   dependencies:
+221 silly publish    { 'yeoman-generator': '~0.13.0',
+221 silly publish      underscore: '~1.4.4',
+221 silly publish      'underscore.string': '~2.3.1' },
+221 silly publish   devDependencies: { mocha: '~1.10.0' },
+221 silly publish   engines: { node: '>=0.8.0' },
+221 silly publish   licenses: [ { type: 'MIT' } ],
+221 silly publish   readme: 'generator-mrwhite\n---------------------\n\n#Mr. White Angular generator\n\n>Yeoman Generator for Large Angular Projects\n\nA fork of [generator-cg-angular](https://github.com/cgross/generator-cg-angular/)\n\nFeatures\n\n* Provides a directory structure geared towards large Angular projects.  \n    * Each controller, service, filter, and directive are placed in their own file.  \n    * All files related to a conceptual unit are placed together.  For example, the controller and HTML file for a partial are placed together in the same directory.\n* Provides a ready-made Grunt build that produces an extremely optimized distribution.\n   * Build uses [grunt-ngmin](https://github.com/btford/grunt-ngmin) so you don\'t have to use the Angular injection syntax for safe minification (i.e. you dont need `$inject` or `([\'$scope\',\'$http\',...`.\n* Integrates Bower for package management\n* Includes Yeoman sub-generators for directives, services, partials, and filters\n* Integrates LESS.\n* Testable - Included Yeoman sub-generators also build test skeletons using mocha, chai, sinon sinon-chai and grunt-mocha.\nRun test via `grunt test`.\n\nDirectory Layout\n-------------\nBelow is an explanation of the folder structure.\n\n    /css ........................... usually only contains app.less\n        app.less ................... main app-wide styles\n    /img ........................... images (not created by default but included in /dist if added)\n    /js ............................ app global javascript files\n        setup.js ................... angular module initialization and route setup\n    /directive ..................... angular directives folder\n        my-directive.js ............ example simple directive\n        /my-directive2 ............. example complex directive (contains external partial)\n            my-directive2.js ....... complex directive javascript\n            my-directive2.html...... complex directive partial\n            my-directive2.less ..... complex directive LESS\n    /filter ........................ angular filters folder\n        my-filter.js ............... example filter\n    /model ......................... angular models - a factory implementation of service for non singletons\n        MyModel.js ................. example model. Note the capital first letter in the naming\n    /partial ....................... angular partials folder\n        /my-partial ................ example partial\n            my-partial.html ........ example partial html\n            my-partial.js .......... example partial controller\n            my-partial.less ........ example partial LESS\n    /service ....................... angular services folder\n        my-service.js .............. example service\n    /dist .......................... distributable version of app built using grunt and Gruntfile.js\n    /bower_component................ 3rd party libraries managed by bower\n    /node_modules .................. npm managed libraries used by grunt\n\nThe `directive`, `filter`, `model`, `partial`, and `service` directories won\'t exist until one of the relevant components is created using a sub-generator.\n\nGetting Started\n-------------\n\nPrerequisites: Node, Grunt, Yeoman, and Bower.  Once Node is installed, do:\n\n    npm install -g grunt-cli yo bower\n\nNext, install this generator:\n\n    npm install -g generator-mrwhite\n\nTo create a project:\n\n    mkdir MyNewAwesomeApp\n    cd MyNewAwesomeApp\n    yo mrwhite\n\nGrunt Tasks\n-------------\n\nNow that the project is created, you have 3 simple Grunt commands available:\n\n    grunt         #Runs tests, starts the server and watch\n    grunt server  #This will run a development server with watch & reload enabled.\n    grunt test    #Run headless unit tests using PhantomJS.\n    grunt build   #Places a fully optimized (minified, concatenated, and more) in /dist\n\nYeoman Subgenerators\n-------------\n\nThere are a set of sub-generators to initialize empty Angular components.  Each of these generators will:\n\n* Create one or more skeleton files (javascript, LESS, html, etc) for the component type\n* Create a skeleton unit test in /test\n* Update index.html and add the necessary `script` tags.\n* Update app.less and add the @import as needed.\n* For partials, update the setup.js, adding the necessary route call if a route was entered in the generator prompts.\n\nThere are generators for `directive`,`partial`,`service`,`model` and `filter`.\n\nRunning a generator:\n\n    yo mrw-angular:directive my-awesome-directive\n    yo mrw-angular:partial my-partial\n    yo mrw-angular:service my-service\n    yo mrw-angular:model MyModel\n    yo mrw-angular:filter my-filter\n\nThe name paramater passed (i.e. \'my-awesome-directive\') will be used for directory and/or file names.\n\nOne quick note, each sub-generator pulls the Angular app/module name from the package.json.  Therefore, if you choose to change the name of your Angular app/module, you must ensure that the name in the package.json stays in sync.\n\nBuild Process\n-------------\n\nThe project will include a ready-made Grunt build that will:\n\n* Build all the LESS files into one minified CSS file.\n* Uses [grunt-angular-templates](https://github.com/ericclemmons/grunt-angular-templates) to turn all your partials into Javascript.\n* Uses [grunt-ngmin](https://github.com/btford/grunt-ngmin) to preprocess all Angular injectable methods and add the necessary Angular annotations to ensure minification will not break your app (and you don\'t have to use the array syntax to \nmanually add the annotations nor $inject).  Read more about [ngmin](https://github.com/btford/ngmin).\n* Concatenates and minifies all Javascript into one file.\n* Replaces all appropriate script references in `index.html` with the minified CSS and JS files.\n* Minifies any images in `/img`.\n* Minifies the `index.html`.\n* Copies any extra files necessary for a distributable build (ex.  Font-Awesome font files, etc).\n\nThe resulting build loads only a few highly compressed files.\n\nThe build process uses [grunt-dom-munger](https://github.com/cgross/grunt-dom-munger) to pull script references from the `index.html`.  This means that the build will always pull all Javascript loaded in your `index.html`.  Adding a new library, new controller, new directive, etc does not require that you update the build (also the order of the scripts in your `index.html` will be maintained when they\'re concatenated).  Importantly, `grunt-dom-munger` uses JQuery selectors to manage the parsing of the script tags. It is very easy to exclude certain scripts from the build.  For example, the project includes a references to the `livereload.js` from the `grunt-contrib-watch` task.  But this file should not be included in a production build.  Thus the `grunt-dom-munger` task is configured with a selector like `script[data-build!="exclude"]` and the script tag for `livereload.js` includes an attribute like `data-build="exclude"`.  You can use this flexibility in your project to include/exclude scripts in your production builds.\n\nRelease History\n-------------\n* 2014-03-01 - V0.1.0 Finished enough for general use. Name changed to mrwhite.\n',
+221 silly publish   readmeFilename: 'README.md',
+221 silly publish   _id: 'generator-mrwhite@0.1.1',
+221 silly publish   dist: { shasum: 'd5b16d541c14001a8e8821f64a0280cdb780464d' },
+221 silly publish   _from: 'https://github.com/Iteam1337/generator-mrwhite/archive/v0.1.2.tar.gz',
+221 silly publish   _resolved: 'https://github.com/Iteam1337/generator-mrwhite/archive/v0.1.2.tar.gz' }
+222 info prepublish generator-mrwhite@0.1.1
+223 verbose url raw generator-mrwhite
+224 verbose url resolving [ 'https://registry.npmjs.org/', './generator-mrwhite' ]
+225 verbose url resolved https://registry.npmjs.org/generator-mrwhite
+226 info trying registry request attempt 1 at 13:35:43
+227 http PUT https://registry.npmjs.org/generator-mrwhite
+228 http 403 https://registry.npmjs.org/generator-mrwhite
+229 info trying registry request attempt 1 at 13:35:44
+230 http PUT https://registry.npmjs.org/generator-mrwhite
+231 http 403 https://registry.npmjs.org/generator-mrwhite
+232 error publish Failed PUT 403
+233 error Error: forbidden cannot modify pre-existing version: 0.1.1
+233 error old={"name":"generator-mrwhite","version":"0.1.1","description":"Yeoman Generator for Large Angular projects.","keywords":["yeoman-generator","angular"],"homepage":"https://github.com/Iteam1337/generator-mrwhite","bugs":{"url":"https://github.com/Iteam1337/generator-mrwhite/issues"},"author":{"name":"Johan Öbrink","email":"johan.obrink@gmail.com","url":"https://github.com/JohanObrink"},"main":"app/index.js","repository":{"type":"git","url":"git://github.com/Iteam1337/generator-mrwhite.git"},"scripts":{"test":"mocha"},"dependencies":{"yeoman-generator":"~0.13.0","underscore":"~1.4.4","underscore.string":"~2.3.1"},"devDependencies":{"mocha":"~1.10.0"},"engines":{"node":">=0.8.0"},"licenses":[{"type":"MIT"}],"_id":"generator-mrwhite@0.1.1","dist":{"shasum":"346250a1730b2b735e9304586df043f0a8d5113d","tarball":"http://registry.npmjs.org/generator-mrwhite/-/generator-mrwhite-0.1.1.tgz"},"_from":"https://github.com/Iteam1337/generator-mrwhite/archive/v0.1.1.tar.gz","_resolved":"https://github.com/Iteam1337/generator-mrwhite/archive/v0.1.1.tar.gz","_npmVersion":"1.3.22","_npmUser":{"name":"johanobrink","email":"johan.obrink@gmail.com"},"maintainers":[{"name":"johanobrink","email":"johan.obrink@gmail.com"}]}
+233 error new={"name":"generator-mrwhite","version":"0.1.1","description":"Yeoman Generator for Large Angular projects.","keywords":["yeoman-generator","angular"],"homepage":"https://github.com/Iteam1337/generator-mrwhite","bugs":{"url":"https://github.com/Iteam1337/generator-mrwhite/issues"},"author":{"name":"Johan Öbrink","email":"johan.obrink@gmail.com","url":"https://github.com/JohanObrink"},"main":"app/index.js","repository":{"type":"git","url":"git://github.com/Iteam1337/generator-mrwhite.git"},"scripts":{"test":"mocha"},"dependencies":{"yeoman-generator":"~0.13.0","underscore":"~1.4.4","underscore.string":"~2.3.1"},"devDependencies":{"mocha":"~1.10.0"},"engines":{"node":">=0.8.0"},"licenses":[{"type":"MIT"}],"readme":"generator-mrwhite\u000a---------------------\u000a\u000a#Mr. White Angular generator\u000a\u000a>Yeoman Generator for Large Angular Projects\u000a\u000aA fork of [generator-cg-angular](https://github.com/cgross/generator-cg-angular/)\u000a\u000aFeatures\u000a\u000a* Provides a directory structure geared towards large Angular projects.  \u000a    * Each controller, service, filter, and directive are placed in their own file.  \u000a    * All files related to a conceptual unit are placed together.  For example, the controller and HTML file for a partial are placed together in the same directory.\u000a* Provides a ready-made Grunt build that produces an extremely optimized distribution.\u000a   * Build uses [grunt-ngmin](https://github.com/btford/grunt-ngmin) so you don't have to use the Angular injection syntax for safe minification (i.e. you dont need `$inject` or `(['$scope','$http',...`.\u000a* Integrates Bower for package management\u000a* Includes Yeoman sub-generators for directives, services, partials, and filters\u000a* Integrates LESS.\u000a* Testable - Included Yeoman sub-generators also build test skeletons using mocha, chai, sinon sinon-chai and grunt-mocha.\u000aRun test via `grunt test`.\u000a\u000aDirectory Layout\u000a-------------\u000aBelow is an explanation of the folder structure.\u000a\u000a    /css ........................... usually only contains app.less\u000a        app.less ................... main app-wide styles\u000a    /img ........................... images (not created by default but included in /dist if added)\u000a    /js ............................ app global javascript files\u000a        setup.js ................... angular module initialization and route setup\u000a    /directive ..................... angular directives folder\u000a        my-directive.js ............ example simple directive\u000a        /my-directive2 ............. example complex directive (contains external partial)\u000a            my-directive2.js ....... complex directive javascript\u000a            my-directive2.html...... complex directive partial\u000a            my-directive2.less ..... complex directive LESS\u000a    /filter ........................ angular filters folder\u000a        my-filter.js ............... example filter\u000a    /model ......................... angular models - a factory implementation of service for non singletons\u000a        MyModel.js ................. example model. Note the capital first letter in the naming\u000a    /partial ....................... angular partials folder\u000a        /my-partial ................ example partial\u000a            my-partial.html ........ example partial html\u000a            my-partial.js .......... example partial controller\u000a            my-partial.less ........ example partial LESS\u000a    /service ....................... angular services folder\u000a        my-service.js .............. example service\u000a    /dist .......................... distributable version of app built using grunt and Gruntfile.js\u000a    /bower_component................ 3rd party libraries managed by bower\u000a    /node_modules .................. npm managed libraries used by grunt\u000a\u000aThe `directive`, `filter`, `model`, `partial`, and `service` directories won't exist until one of the relevant components is created using a sub-generator.\u000a\u000aGetting Started\u000a-------------\u000a\u000aPrerequisites: Node, Grunt, Yeoman, and Bower.  Once Node is installed, do:\u000a\u000a    npm install -g grunt-cli yo bower\u000a\u000aNext, install this generator:\u000a\u000a    npm install -g generator-mrwhite\u000a\u000aTo create a project:\u000a\u000a    mkdir MyNewAwesomeApp\u000a    cd MyNewAwesomeApp\u000a    yo mrwhite\u000a\u000aGrunt Tasks\u000a-------------\u000a\u000aNow that the project is created, you have 3 simple Grunt commands available:\u000a\u000a    grunt         #Runs tests, starts the server and watch\u000a    grunt server  #This will run a development server with watch & reload enabled.\u000a    grunt test    #Run headless unit tests using PhantomJS.\u000a    grunt build   #Places a fully optimized (minified, concatenated, and more) in /dist\u000a\u000aYeoman Subgenerators\u000a-------------\u000a\u000aThere are a set of sub-generators to initialize empty Angular components.  Each of these generators will:\u000a\u000a* Create one or more skeleton files (javascript, LESS, html, etc) for the component type\u000a* Create a skeleton unit test in /test\u000a* Update index.html and add the necessary `script` tags.\u000a* Update app.less and add the @import as needed.\u000a* For partials, update the setup.js, adding the necessary route call if a route was entered in the generator prompts.\u000a\u000aThere are generators for `directive`,`partial`,`service`,`model` and `filter`.\u000a\u000aRunning a generator:\u000a\u000a    yo mrw-angular:directive my-awesome-directive\u000a    yo mrw-angular:partial my-partial\u000a    yo mrw-angular:service my-service\u000a    yo mrw-angular:model MyModel\u000a    yo mrw-angular:filter my-filter\u000a\u000aThe name paramater passed (i.e. 'my-awesome-directive') will be used for directory and/or file names.\u000a\u000aOne quick note, each sub-generator pulls the Angular app/module name from the package.json.  Therefore, if you choose to change the name of your Angular app/module, you must ensure that the name in the package.json stays in sync.\u000a\u000aBuild Process\u000a-------------\u000a\u000aThe project will include a ready-made Grunt build that will:\u000a\u000a* Build all the LESS files into one minified CSS file.\u000a* Uses [grunt-angular-templates](https://github.com/ericclemmons/grunt-angular-templates) to turn all your partials into Javascript.\u000a* Uses [grunt-ngmin](https://github.com/btford/grunt-ngmin) to preprocess all Angular injectable methods and add the necessary Angular annotations to ensure minification will not break your app (and you don't have to use the array syntax to \u000amanually add the annotations nor $inject).  Read more about [ngmin](https://github.com/btford/ngmin).\u000a* Concatenates and minifies all Javascript into one file.\u000a* Replaces all appropriate script references in `index.html` with the minified CSS and JS files.\u000a* Minifies any images in `/img`.\u000a* Minifies the `index.html`.\u000a* Copies any extra files necessary for a distributable build (ex.  Font-Awesome font files, etc).\u000a\u000aThe resulting build loads only a few highly compressed files.\u000a\u000aThe build process uses [grunt-dom-munger](https://github.com/cgross/grunt-dom-munger) to pull script references from the `index.html`.  This means that the build will always pull all Javascript loaded in your `index.html`.  Adding a new library, new controller, new directive, etc does not require that you update the build (also the order of the scripts in your `index.html` will be maintained when they're concatenated).  Importantly, `grunt-dom-munger` uses JQuery selectors to manage the parsing of the script tags. It is very easy to exclude certain scripts from the build.  For example, the project includes a references to the `livereload.js` from the `grunt-contrib-watch` task.  But this file should not be included in a production build.  Thus the `grunt-dom-munger` task is configured with a selector like `script[data-build!=\"exclude\"]` and the script tag for `livereload.js` includes an attribute like `data-build=\"exclude\"`.  You can use this flexibility in your project to include/exclude scripts in your production builds.\u000a\u000aRelease History\u000a-------------\u000a* 2014-03-01 - V0.1.0 Finished enough for general use. Name changed to mrwhite.\u000a","readmeFilename":"README.md","_id":"generator-mrwhite@0.1.1","dist":{"shasum":"d5b16d541c14001a8e8821f64a0280cdb780464d","tarball":"http://registry.npmjs.org/generator-mrwhite/-/generator-mrwhite-0.1.1.tgz"},"_from":"https://github.com/Iteam1337/generator-mrwhite/archive/v0.1.2.tar.gz","_resolved":"https://github.com/Iteam1337/generator-mrwhite/archive/v0.1.2.tar.gz","_npmVersion":"1.3.22","_npmUser":{"name":"johanobrink","email":"johan.obrink@gmail.com"},"maintainers":[{"name":"johanobrink","email":"johan.obrink@gmail.com"}]}: generator-mrwhite
+233 error     at RegClient.<anonymous> (/Users/jok/.nvm/v0.10.22/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:275:14)
+233 error     at Request.self.callback (/Users/jok/.nvm/v0.10.22/lib/node_modules/npm/node_modules/request/request.js:123:22)
+233 error     at Request.EventEmitter.emit (events.js:98:17)
+233 error     at Request.<anonymous> (/Users/jok/.nvm/v0.10.22/lib/node_modules/npm/node_modules/request/request.js:893:14)
+233 error     at Request.EventEmitter.emit (events.js:117:20)
+233 error     at IncomingMessage.<anonymous> (/Users/jok/.nvm/v0.10.22/lib/node_modules/npm/node_modules/request/request.js:844:12)
+233 error     at IncomingMessage.EventEmitter.emit (events.js:117:20)
+233 error     at _stream_readable.js:920:16
+233 error     at process._tickCallback (node.js:415:13)
+234 error If you need help, you may report this *entire* log,
+234 error including the npm and node versions, at:
+234 error     <http://github.com/isaacs/npm/issues>
+235 error System Darwin 13.0.0
+236 error command "node" "/Users/jok/.nvm/v0.10.22/bin/npm" "publish" "https://github.com/Iteam1337/generator-mrwhite/archive/v0.1.2.tar.gz"
+237 error cwd /Users/jok/src/generator-mrwhite
+238 error node -v v0.10.22
+239 error npm -v 1.3.22
+240 verbose exit [ 1, true ]
