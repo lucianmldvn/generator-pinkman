@@ -1,9 +1,11 @@
-generator-mrw-angular
+generator-mrwhite
 ---------------------
 
 #Mr. White Angular generator
 
 >Yeoman Generator for Large Angular Projects
+
+A fork of [generator-cg-angular](https://github.com/cgross/generator-cg-angular/)
 
 Features
 
@@ -15,7 +17,7 @@ Features
 * Integrates Bower for package management
 * Includes Yeoman sub-generators for directives, services, partials, and filters
 * Integrates LESS.
-* Testable - Included Yeoman sub-generators also build test skeletons using mocha, chai, sinon sinon-chai and karma.
+* Testable - Included Yeoman sub-generators also build test skeletons using mocha, chai, sinon sinon-chai and grunt-mocha.
 Run test via `grunt test`.
 
 Directory Layout
@@ -65,13 +67,14 @@ To create a project:
 
     mkdir MyNewAwesomeApp
     cd MyNewAwesomeApp
-    yo mrw-angular
+    yo mrwhite
 
 Grunt Tasks
 -------------
 
 Now that the project is created, you have 3 simple Grunt commands available:
 
+    grunt         #Runs tests, starts the server and watch
     grunt server  #This will run a development server with watch & reload enabled.
     grunt test    #Run headless unit tests using PhantomJS.
     grunt build   #Places a fully optimized (minified, concatenated, and more) in /dist
@@ -87,7 +90,7 @@ There are a set of sub-generators to initialize empty Angular components.  Each 
 * Update app.less and add the @import as needed.
 * For partials, update the setup.js, adding the necessary route call if a route was entered in the generator prompts.
 
-There are generators for `directive`,`partial`,`service`, and `filter`.
+There are generators for `directive`,`partial`,`service`,`model` and `filter`.
 
 Running a generator:
 
@@ -97,7 +100,7 @@ Running a generator:
     yo mrw-angular:model MyModel
     yo mrw-angular:filter my-filter
 
-The name paramater passed (i.e. 'my-awesome-directive') will be used for directory and/or file names.  The generators will derive appropriate class names from this parameter (ex. 'my-awesome-directive' will convert to a class name of 'MyAwesomeDirective').
+The name paramater passed (i.e. 'my-awesome-directive') will be used for directory and/or file names.
 
 One quick note, each sub-generator pulls the Angular app/module name from the package.json.  Therefore, if you choose to change the name of your Angular app/module, you must ensure that the name in the package.json stays in sync.
 
@@ -122,8 +125,4 @@ The build process uses [grunt-dom-munger](https://github.com/cgross/grunt-dom-mu
 
 Release History
 -------------
-* 9/06/2013 - V1.0.4 - Fixed templating issue with generated specs for `yo cg-angular:service` subgenerator.
-* 8/29/2013 - V1.0.3 - Renamed `/lib` back to `/bower_components` as clarity trumps brevity.  Renamed `/bin` to `/dist`. Fixed spelling error in generated directive's js template location.  Moved up to later version of `yeoman-generator` dependency to solve "Cannot read bold of undefined" error coming from Yeoman.  JSHint options now read from `.jshintrc`.  And more small stuff.
-* 7/08/2013 - V1.0.2 - Added utf8 charset to index.html.  Fix for "EMFile, too many open files" on `grunt watch` by no longer watching the `lib` folder.
-* 6/20/2013 - v1.0.1 - Fixed a ton of known issues.  Replaced `grunt-regarde` with `grunt-contrib-watch`.  Fixed and tweaked the unit test specs and `grunt test`.  Fixed issues with the build.  Generator is now ready for real use.
-* 6/18/2013 - v1.0.0 - Initial release of template as Yeoman generator.
+* 2014-03-01 - V0.1.0 Finished enough for general use. Name changed to mrwhite.
