@@ -27,7 +27,15 @@
     "underscore.string": "~2.3.1"
   },
   "devDependencies": {
-    "mocha": "~1.10.0"
+    "mocha": "~1.10.0",
+    "grunt": "~0.4.2",
+    "sinon-chai": "~2.5.0",
+    "proxyquire": "~0.5.2",
+    "chai": "~1.9.0",
+    "grunt-mocha-test": "~0.9.4",
+    "grunt-contrib-watch": "~0.5.3",
+    "sinon": "~1.8.2",
+    "grunt-contrib-jshint": "~0.8.0"
   },
   "engines": {
     "node": ">=0.8.0"
