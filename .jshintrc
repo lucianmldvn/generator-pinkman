@@ -1,6 +1,5 @@
 {
   "node": true,
-  "es5": true,
   "esnext": true,
   "bitwise": true,
   "camelcase": true,
@@ -18,5 +17,13 @@
   "strict": true,
   "trailing": true,
   "smarttabs": true,
-  "white": true
+  "white": true,
+  "globals": {
+    "describe": true,
+    "before": true,
+    "beforeEach": true,
+    "after": true,
+    "afterEach": true,
+    "it": true
+  }
 }
