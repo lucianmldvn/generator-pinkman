@@ -1,4 +1,4 @@
-angular.module('<%= appname %>').directive('<%= _.classify(name) %>', function () {
+angular.module('<%= appname %>').directive('<%= name %>', function () {
   'use strict';
 
   return {
