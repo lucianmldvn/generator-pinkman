@@ -22,12 +22,12 @@
     "test": "mocha"
   },
   "dependencies": {
-    "yeoman-generator": "~0.13.0",
-    "underscore": "~1.4.4",
-    "underscore.string": "~2.3.1"
+    "yeoman-generator": "0.13.0",
+    "underscore": "1.4.4",
+    "underscore.string": "^2.3.3"
   },
   "devDependencies": {
-    "mocha": "~1.10.0"
+    "mocha": "^1.17.1"
   },
   "engines": {
     "node": ">=0.8.0"
