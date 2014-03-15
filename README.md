@@ -112,11 +112,11 @@ There are generators for `directive`,`partial`,`service`,`model` and `filter`.
 
 Running a generator:
 
-    yo mrw-angular:directive my-awesome-directive
-    yo mrw-angular:partial my-partial
-    yo mrw-angular:service my-service
-    yo mrw-angular:model MyModel
-    yo mrw-angular:filter my-filter
+    yo mrwhite:directive my-awesome-directive
+    yo mrwhite:partial my-partial
+    yo mrwhite:service my-service
+    yo mrwhite:model MyModel
+    yo mrwhite:filter my-filter
 
 The name paramater passed (i.e. 'my-awesome-directive') will be used for directory and/or file names.
 
