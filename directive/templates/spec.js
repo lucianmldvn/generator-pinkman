@@ -5,7 +5,7 @@ describe('<%= name %>', function () {
   beforeEach(function () {
     module('<%= appname %>');
     inject(function ($rootScope, _$compile_, _$templateCache_) {
-      scope = $rootScope.$new();
+      outerScope = $rootScope.$new();
       $compile = _$compile_;
       $templateCache = _$templateCache_;
     });
