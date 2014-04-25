@@ -43,28 +43,30 @@ PartialGenerator.prototype.askFor = function askFor() {
 
 PartialGenerator.prototype.files = function files() {
 
-  this.ctrlname = _.capitalize(_.camelize(this.name)) + 'Ctrl';
+  this.ctrlname = _.capitalize(_.camelize(this.name.replace(/\//g,'-'))) + 'Ctrl';
 
-  this.template('partial.js', 'partial/'+this.name+'/'+this.name+'.js');
-  this.template('partial.html', 'partial/'+this.name+'/'+this.name+'.html');
-  this.template('partial.less', 'partial/'+this.name+'/'+this.name+'.less');
+  var filename = this.name.slice(this.name.lastIndexOf('/') + 1);
+
+  this.template('partial.js', 'partial/'+this.name+'/'+filename+'.js');
+  this.template('partial.html', 'partial/'+this.name+'/'+filename+'.html');
+  this.template('partial.less', 'partial/'+this.name+'/'+filename+'.less');
   this.template('spec.js', 'test/unit/controller/'+this.name+'.js');
 
-  cgUtils.addToFile('index.html','<script src="partial/'+this.name+'/'+this.name+'.js"></script>',cgUtils.PARTIAL_JS_MARKER,'  ');
+  cgUtils.addToFile('index.html','<script src="partial/'+this.name+'/'+filename+'.js"></script>',cgUtils.PARTIAL_JS_MARKER,'  ');
 
-  cgUtils.addToFile('test/unit/index.html','<script src="../../partial/'+this.name+'/'+this.name+'.js"></script>',cgUtils.PARTIAL_JS_MARKER,'  ');
+  cgUtils.addToFile('test/unit/index.html','<script src="../../partial/'+this.name+'/'+filename+'.js"></script>',cgUtils.PARTIAL_JS_MARKER,'  ');
   cgUtils.addToFile('test/unit/index.html','<script src="controller/'+this.name+'.js"></script>',cgUtils.PARTIAL_JS_TEST_MARKER,'  ');
   
   this.log.writeln(' updating'.green + ' %s','index.html');
 
-  cgUtils.addToFile('css/app.less','@import "../partial/'+this.name+'/'+this.name+'.less";',cgUtils.PARTIAL_LESS_MARKER,'');
+  cgUtils.addToFile('css/app.less','@import "../partial/'+this.name+'/'+filename+'.less";',cgUtils.PARTIAL_LESS_MARKER,'');
   this.log.writeln(' updating'.green + ' %s','app/app.less');
 
   if (this.route && this.route.length > 0){
     var js = [
       "$stateProvider.state('" + _.slugify(this.name) + "', {",
       "    url: '" + this.route + "',",
-      "    templateUrl: 'partial/" + this.name + "/" + this.name + ".html'",
+      "    templateUrl: 'partial/" + this.name + "/" + filename + ".html'",
       "  });"
     ];
     cgUtils.addToFile('js/setup.js', js.join('\r'), cgUtils.ROUTE_MARKER,'\t');
