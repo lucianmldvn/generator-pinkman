@@ -1,6 +1,6 @@
 {
   "name": "generator-mrwhite",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Yeoman Generator for Large Angular projects.",
   "keywords": [
     "yeoman-generator",
