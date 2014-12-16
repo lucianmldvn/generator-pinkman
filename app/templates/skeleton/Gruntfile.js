@@ -45,12 +45,12 @@ module.exports = function (grunt) {
         src:['temp']
       }
     }, 
-    less: {
+    scss: {
       production: {
         options: {
         },
         files: {
-          "temp/app.css": "css/app.less"
+          "temp/app.css": "css/app.scss"
         }
       }
     },         
@@ -110,6 +110,15 @@ module.exports = function (grunt) {
         },
         src:'dist/index.html'
       }      
+    },
+    autoprefixer: {
+      options: {
+        browsers: ['last 2 versions']
+      },
+      your_target: {
+        src: 'temp/app.css',
+        dest: 'temp/screen.css'
+      },
     },
     cssmin: {
       main: {
@@ -176,13 +185,14 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-dom-munger');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
-  grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-ngmin');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-mocha');
+  grunt.loadNpmTasks('grunt-autoprefixer');
 
-  grunt.registerTask('build',['clean:before','less','dom_munger:readcss','dom_munger:readscripts','ngtemplates','cssmin','concat','ngmin','uglify','copy','dom_munger:removecss','dom_munger:addcss','dom_munger:removescripts','dom_munger:addscript','htmlmin','imagemin','clean:after']);
+  grunt.registerTask('build',['clean:before','scss', 'autoprefixer', 'dom_munger:readcss','dom_munger:readscripts','ngtemplates','cssmin','concat','ngmin','uglify','copy','dom_munger:removecss','dom_munger:addcss','dom_munger:removescripts','dom_munger:addscript','htmlmin','imagemin','clean:after']);
   grunt.registerTask('test',['jshint', 'mocha']);
   grunt.registerTask('server', ['connect']);
-  grunt.registerTask('default', ['test', 'server', 'watch']);
+  grunt.registerTask('default', ['test', 'scss', 'server', 'watch']);
 };
