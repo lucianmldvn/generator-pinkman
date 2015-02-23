@@ -4,7 +4,7 @@ var yeoman = require('yeoman-generator');
 var path = require('path');
 var cgUtils = require('../utils.js');
 
-var FilterGenerator = module.exports = function FilterGenerator(args, options, config) {
+var FilterGenerator = module.exports = function FilterGenerator() {
 
   yeoman.generators.NamedBase.apply(this, arguments);
 
@@ -19,11 +19,20 @@ var FilterGenerator = module.exports = function FilterGenerator(args, options, c
 util.inherits(FilterGenerator, yeoman.generators.NamedBase);
 
 FilterGenerator.prototype.files = function files() {
-  this.template('filter.js', 'filter/'+this.name+'.js');
-  this.template('spec.js', 'test/unit/filter/'+this.name+'.js');
+  this.template('filter.js', 'filter/' + this.name + '.js');
+  this.template('spec.js', 'test/unit/filter/' + this.name + '.js');
 
-  cgUtils.addToFile('index.html','<script src="filter/'+this.name+'.js"></script>',cgUtils.FILTER_JS_MARKER,'  ');
-  cgUtils.addToFile('test/unit/index.html','<script src="../../filter/'+this.name+'.js"></script>',cgUtils.FILTER_JS_MARKER,'  ');
-  cgUtils.addToFile('test/unit/index.html','<script src="filter/'+this.name+'.js"></script>',cgUtils.FILTER_JS_TEST_MARKER,'  ');
-  this.log.writeln(' updating'.green + ' %s','index.html');
+  cgUtils.addToFile('index.html',
+                    '<script src="filter/' + this.name + '.js"></script>',
+                    cgUtils.FILTER_JS_MARKER,
+                    '  ');
+  cgUtils.addToFile('test/unit/index.html',
+                    '<script src="../../filter/' + this.name + '.js"></script>',
+                    cgUtils.FILTER_JS_MARKER,
+                    '  ');
+  cgUtils.addToFile('test/unit/index.html',
+                    '<script src="filter/' + this.name + '.js"></script>',
+                    cgUtils.FILTER_JS_TEST_MARKER,
+                    '  ');
+  this.log.writeln(' updating'.green + ' %s', 'index.html');
 };

@@ -13,119 +13,188 @@ module.exports = function (grunt) {
         options: {
           port: 9001,
           middleware: function(connect, options) {
-            return [folderMount(connect, options.base[0])]
+            return [folderMount(connect, options.base[0])];
           }
         }
       }
     },
     watch: {
       options: {
-          livereload: true
+        livereload: true
       },
       server: {
-        files: ['js/**/*','css/**/*','img/**/*','partial/**/*','service/**/*','filter/**/*','directive/**/*','index.html'],
+        files: [
+          'js/**/*',
+          'css/**/*',
+          'img/**/*',
+          'partial/**/*',
+          'service/**/*',
+          'filter/**/*',
+          'directive/**/*',
+          'index.html'
+        ],
         tasks: []
       },
       test: {
-        files: ['js/**/*','partial/**/*.js','service/**/*.js','filter/**/*.js','directive/**/*.js','index.html','test/unit/**/*'],
-        tasks: ['test']
+        files: [
+          'js/**/*',
+          'partial/**/*.js',
+          'service/**/*.js',
+          'filter/**/*.js',
+          'directive/**/*.js',
+          'index.html',
+          'test/unit/**/*'
+        ],
+        tasks: [
+          'test'
+        ]
       }
     },
     jshint: {
       options: {
         jshintrc: '.jshintrc'
       },
-      files: ['js/**/*.js','partial/**/*.js','service/**/*.js','filter/**/*.js','directive/**/*.js']
+      files: [
+        'js/**/*.js',
+        'partial/**/*.js',
+        'service/**/*.js',
+        'filter/**/*.js',
+        'directive/**/*.js'
+      ]
     },
     clean: {
       before:{
-        src:['dist','temp']
+        src:[
+          'dist',
+          'temp'
+        ]
       },
       after: {
-        src:['temp']
+        src: [
+          'temp'
+        ]
       }
-    }, 
+    },
     less: {
       production: {
         options: {
         },
         files: {
-          "temp/app.css": "css/app.less"
+          'temp/app.css': 'css/app.less'
         }
       }
-    },         
+    },
     ngtemplates: {
       main: {
         options: {
-            module:'<%= _.slugify(appname) %>'
+          module: '<%= _.slugify(appname) %>'
         },
-        src: [ 'partial/**/*.html','directive/**/*.html' ],
+        src: [
+          'partial/**/*.html',
+          'directive/**/*.html'
+        ],
         dest: 'temp/templates.js'
       }
     },
     copy: {
       main: {
         files: [
-          {src: ['index.html'], dest: 'dist/'},
-          {src: ['img/**'], dest: 'dist/'}
+          {
+            src: [
+              'index.html'
+            ],
+            dest: 'dist/'
+          },
+          {
+            src: [
+              'img/**'
+            ],
+            dest: 'dist/'
+          }
         ]
       }
     },
-    dom_munger:{
+    dom_munger: {
       readscripts: {
         options: {
-          read:{selector:'script[data-build!="exclude"]',attribute:'src',writeto:'appjs'}
+          read: {
+            selector: 'script[data-build!="exclude"]',
+            attribute: 'src',
+            writeto: 'appjs'
+          }
         },
         src:'index.html'
       },
       readcss: {
         options: {
-          read:{selector:'link[rel="stylesheet"]',attribute:'href',writeto:'appcss'}
+          read: {
+            selector: 'link[rel="stylesheet"]',
+            attribute: 'href',
+            writeto: 'appcss'
+          }
         },
         src:'index.html'
       },
       removescripts: {
-        options:{
-          remove:'script[data-remove!="exclude"]',
-          append:{selector:'head',html:'<script src="app.full.min.js"></script>'}
+        options: {
+          remove: 'script[data-remove!="exclude"]',
+          append: {
+            selector: 'head',
+            html: '<script src="app.full.min.js"></script>'
+          }
         },
-        src:'dist/index.html'
-      }, 
+        src: 'dist/index.html'
+      },
       addscript: {
-        options:{
-          append:{selector:'body',html:'<script src="app.full.min.js"></script>'}
+        options: {
+          append: {
+            selector: 'body',
+            html: '<script src="app.full.min.js"></script>'
+          }
         },
-        src:'dist/index.html'
-      },       
+        src: 'dist/index.html'
+      },
       removecss: {
-        options:{
-          remove:'link',
-          append:{selector:'head',html:'<link rel="stylesheet" href="css/app.full.min.css">'}
+        options: {
+          remove: 'link',
+          append: {
+            selector: 'head',
+            html: '<link rel="stylesheet" href="css/app.full.min.css">'
+          }
         },
-        src:'dist/index.html'
+        src: 'dist/index.html'
       },
       addcss: {
-        options:{
-          append:{selector:'head',html:'<link rel="stylesheet" href="css/app.full.min.css">'}
+        options: {
+          append: {
+            selector: 'head',
+            html: '<link rel="stylesheet" href="css/app.full.min.css">'
+          }
         },
-        src:'dist/index.html'
-      }      
+        src: 'dist/index.html'
+      }
     },
     cssmin: {
       main: {
-        src:['temp/app.css','<%%= dom_munger.data.appcss %>'],
-        dest:'dist/css/app.full.min.css'
+        src: [
+          'temp/app.css',
+          '<%%= dom_munger.data.appcss %>'
+        ],
+        dest: 'dist/css/app.full.min.css'
       }
     },
     concat: {
       main: {
-        src: ['<%%= dom_munger.data.appjs %>','<%%= ngtemplates.main.dest %>'],
+        src: [
+          '<%%= dom_munger.data.appjs %>',
+          '<%%= ngtemplates.main.dest %>'
+        ],
         dest: 'temp/app.full.js'
       }
     },
     ngmin: {
       main: {
-        src:'temp/app.full.js',
+        src: 'temp/app.full.js',
         dest: 'temp/app.full.js'
       }
     },
@@ -148,16 +217,23 @@ module.exports = function (grunt) {
     },
     imagemin: {
       main:{
-        files: [{
-          expand: true, cwd:'dist/',
-          src:['**/{*.png,*.jpg}'],
-          dest: 'dist/'
-        }]
+        files: [
+          {
+            expand: true,
+            cwd:'dist/',
+            src: [
+              '**/{*.png,*.jpg}'
+            ],
+            dest: 'dist/'
+          }
+        ]
       }
     },
     mocha: {
       test: {
-        src: ['test/unit/*.html'],
+        src: [
+          'test/unit/*.html'
+        ],
         options: {
           run: true
         }
@@ -181,8 +257,35 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-mocha');
 
-  grunt.registerTask('build',['clean:before','less','dom_munger:readcss','dom_munger:readscripts','ngtemplates','cssmin','concat','ngmin','uglify','copy','dom_munger:removecss','dom_munger:addcss','dom_munger:removescripts','dom_munger:addscript','htmlmin','imagemin','clean:after']);
-  grunt.registerTask('test',['jshint', 'mocha']);
-  grunt.registerTask('server', ['connect']);
-  grunt.registerTask('default', ['test', 'server', 'watch']);
+  grunt.registerTask('build', [
+    'clean:before',
+    'less',
+    'dom_munger:readcss',
+    'dom_munger:readscripts',
+    'ngtemplates',
+    'cssmin',
+    'concat',
+    'ngmin',
+    'uglify',
+    'copy',
+    'dom_munger:removecss',
+    'dom_munger:addcss',
+    'dom_munger:removescripts',
+    'dom_munger:addscript',
+    'htmlmin',
+    'imagemin',
+    'clean:after'
+  ]);
+  grunt.registerTask('test', [
+    'jshint',
+    'mocha'
+  ]);
+  grunt.registerTask('server', [
+    'connect'
+  ]);
+  grunt.registerTask('default', [
+    'test',
+    'server',
+    'watch'
+  ]);
 };

@@ -1,6 +1,6 @@
 describe('<%= ctrlname %>', function () {
-
-  var scope, ctrl;
+  var scope;
+  var ctrl;
 
   beforeEach(function () {
     module('<%= appname %>');
@@ -11,7 +11,7 @@ describe('<%= ctrlname %>', function () {
   });
 
   xit('should have tests', function () {
-    
+
   });
 
 });

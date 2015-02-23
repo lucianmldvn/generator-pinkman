@@ -1,16 +1,19 @@
 'use strict';
+
 var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
-
-var CgangularGenerator = module.exports = function CgangularGenerator(args, options, config) {
+var CgangularGenerator = module.exports = function CgangularGenerator(args, options) {
   yeoman.generators.Base.apply(this, arguments);
 
   this.on('end', function () {
-    this.installDependencies({ skipInstall: options['skip-install'] });
+    this.installDependencies({
+      skipInstall: options['skip-install']
+    });
   });
 
-  this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
+  var pkgpath = (path.join(__dirname, '../package.json'));
+  this.pkg = JSON.parse(this.readFileAsString(pkgpath));
 };
 
 util.inherits(CgangularGenerator, yeoman.generators.Base);
@@ -32,10 +35,10 @@ CgangularGenerator.prototype.askFor = function askFor() {
 };
 
 CgangularGenerator.prototype.app = function app() {
-  this.directory('skeleton/','./');
-  this.template('skeleton/js/setup.js','./js/setup.js');
-  this.template('skeleton/bower.json','./bower.json');
-  this.template('skeleton/Gruntfile.js','./Gruntfile.js');
-  this.template('skeleton/index.html','./index.html');
-  this.template('skeleton/package.json','./package.json');
+  this.directory('skeleton/', './');
+  this.template('skeleton/js/setup.js', './js/setup.js');
+  this.template('skeleton/bower.json', './bower.json');
+  this.template('skeleton/Gruntfile.js', './Gruntfile.js');
+  this.template('skeleton/index.html', './index.html');
+  this.template('skeleton/package.json', './package.json');
 };

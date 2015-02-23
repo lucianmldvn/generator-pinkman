@@ -1,10 +1,13 @@
-angular.module('<%= _.slugify(appname) %>', ['ui.router', 'ngResource']);
+angular.module('<%= _.slugify(appname) %>', [
+  'ui.router',
+  'ngResource'
+]);
 
 angular.module('<%= _.slugify(appname) %>').config(function ($stateProvider, $urlRouterProvider) {
   'use strict';
 
   /* Add New Routes Above */
-  
+
   // For any unmatched url, redirect to /
   $urlRouterProvider.otherwise("/");
 

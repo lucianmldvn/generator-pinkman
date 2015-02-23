@@ -8,7 +8,6 @@
 <body>
 
   <div id="mocha"></div>
-
   <!-- Livereload script for development only (stripped during dist build) -->
   <script src="http://localhost:35729/livereload.js"></script>
 
@@ -20,6 +19,7 @@
   <script src="../../bower_components/moment/moment.js"></script>
 
   <!-- Test libraries -->
+  <script>/*global mocha, chai*/</script>
   <script src="../../node_modules/mocha/mocha.js"></script>
   <script>mocha.setup('bdd');</script>
   <script src="../../node_modules/chai/chai.js"></script>
@@ -34,10 +34,10 @@
   <script src="../../js/setup.js"></script>
 
   <!-- Service JS -->
-  <!-- Add New Service JS Above --> 
+  <!-- Add New Service JS Above -->
 
   <!-- Model JS -->
-  <!-- Add New Model JS Above --> 
+  <!-- Add New Model JS Above -->
 
   <!-- Directive JS -->
   <!-- Add New Directive JS Above -->
@@ -53,10 +53,10 @@
   <!-- Test files -->
 
   <!-- Service Test JS -->
-  <!-- Add New Service Test JS Above --> 
+  <!-- Add New Service Test JS Above -->
 
   <!-- Model Test JS -->
-  <!-- Add New Model Test JS Above --> 
+  <!-- Add New Model Test JS Above -->
 
   <!-- Directive Test JS -->
   <!-- Add New Directive Test JS Above -->
@@ -74,6 +74,6 @@
       mocha.run();
     }
   </script>
-  
+
 </body>
 </html>

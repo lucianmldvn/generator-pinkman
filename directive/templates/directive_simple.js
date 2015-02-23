@@ -5,7 +5,6 @@ angular.module('<%= appname %>').directive('<%= name %>', function () {
     restrict: 'A',
     link: function (scope, element, attrs, fn) {
 
-
     }
   };
 });

@@ -1,5 +1,4 @@
 describe('<%= name %>', function () {
-
   var filter;
 
   beforeEach(function () {

@@ -1,6 +1,7 @@
 describe('<%= name %>', function () {
-
-  var $compile, outerScope, scope;
+  var $compile;
+  var outerScope;
+  // var scope;
 
   beforeEach(function () {
     module('<%= appname %>');
@@ -11,7 +12,7 @@ describe('<%= name %>', function () {
   });
 
   xit('should have tests', function () {
-    /* 
+    /*
       To test your directive, you need to create some html that would use your directive,
       send that through compile() then compare the results.
 
@@ -21,5 +22,5 @@ describe('<%= name %>', function () {
       expect(element.text()).to.equal('hello, world');
     */
   });
-  
+
 });

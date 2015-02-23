@@ -8,7 +8,7 @@ var _ = require('underscore');
 _.str = require('underscore.string');
 _.mixin(_.str.exports());
 
-var PartialGenerator = module.exports = function PartialGenerator(args, options, config) {
+var PartialGenerator = module.exports = function PartialGenerator(args) {
 
   this.log.writeln(args);
   yeoman.generators.NamedBase.apply(this, arguments);
@@ -29,7 +29,8 @@ PartialGenerator.prototype.askFor = function askFor() {
   var prompts = [
     {
       name: 'route',
-      message: 'Enter your route url (i.e. /mypartial/:id).  If you don\'t want a route added for you, leave this empty.'
+      message: 'Enter your route url (i.e. /mypartial/:id).  ' +
+               'If you don\'t want a route added for you, leave this empty.'
     }
   ];
 
@@ -43,48 +44,65 @@ PartialGenerator.prototype.askFor = function askFor() {
 
 PartialGenerator.prototype.files = function files() {
 
-  this.ctrlname = _.capitalize(_.camelize(this.name.replace(/\//g,'-'))) + 'Ctrl';
+  var camelCase = _.camelize(this.name.replace(/\//g,'-'));
+  this.ctrlname = _.capitalize(camelCase) + 'Ctrl';
 
   var filename = this.name.slice(this.name.lastIndexOf('/') + 1);
 
-  this.template('partial.js', 'partial/'+this.name+'/'+filename+'.js');
-  this.template('partial.html', 'partial/'+this.name+'/'+filename+'.html');
-  this.template('partial.less', 'partial/'+this.name+'/'+filename+'.less');
-  this.template('spec.js', 'test/unit/controller/'+this.name+'.js');
+  var nameAndFilename = this.name + '/' + filename;
+  this.template('partial.js', 'partial/' + nameAndFilename + '.js');
+  this.template('partial.html', 'partial/' + nameAndFilename + '.html');
+  this.template('partial.less', 'partial/' + nameAndFilename + '.less');
+  this.template('spec.js', 'test/unit/controller/' + this.name + '.js');
 
-  cgUtils.addToFile('index.html','<script src="partial/'+this.name+'/'+filename+'.js"></script>',cgUtils.PARTIAL_JS_MARKER,'  ');
+  var pathEnd = '.js"></script>';
+  var filePath = '<script src="partial/' + nameAndFilename + pathEnd;
+  var testFilePath = '<script src="../../partial/' + nameAndFilename + pathEnd;
+  var testPath = '<script src="controller/' + this.name + pathEnd;
 
-  cgUtils.addToFile('test/unit/index.html','<script src="../../partial/'+this.name+'/'+filename+'.js"></script>',cgUtils.PARTIAL_JS_MARKER,'  ');
-  cgUtils.addToFile('test/unit/index.html','<script src="controller/'+this.name+'.js"></script>',cgUtils.PARTIAL_JS_TEST_MARKER,'  ');
-  
-  this.log.writeln(' updating'.green + ' %s','index.html');
+  cgUtils.addToFile('index.html', filePath, cgUtils.PARTIAL_JS_MARKER, '  ');
+  cgUtils.addToFile('test/unit/index.html',
+                    testFilePath,
+                    cgUtils.PARTIAL_JS_MARKER,
+                    '  ');
+  cgUtils.addToFile('test/unit/index.html',
+                    testPath,
+                    cgUtils.PARTIAL_JS_TEST_MARKER,
+                    '  ');
 
-  cgUtils.addToFile('css/app.less','@import "../partial/'+this.name+'/'+filename+'.less";',cgUtils.PARTIAL_LESS_MARKER,'');
-  this.log.writeln(' updating'.green + ' %s','app/app.less');
+  this.log.writeln(' updating'.green + ' %s', 'index.html');
+  cgUtils.addToFile('css/app.less',
+                    '@import "../partial/' + nameAndFilename + '";',
+                    cgUtils.PARTIAL_LESS_MARKER,
+                    '');
+  this.log.writeln(' updating'.green + ' %s', 'app/app.less');
 
   if (this.route && this.route.length > 0){
     var js = [
-      "$stateProvider.state('" + _.slugify(this.name) + "', {",
-      "    url: '" + this.route + "',",
-      "    templateUrl: 'partial/" + this.name + "/" + filename + ".html'",
-      "  });"
+      '$stateProvider.state(\'' + _.slugify(this.name) + '\', {',
+      '    url: \'' + this.route + '\',',
+      '    templateUrl: \'partial/' + nameAndFilename + '.html\'',
+      '  });'
     ];
-    cgUtils.addToFile('js/setup.js', js.join('\r'), cgUtils.ROUTE_MARKER,'\t');
+    cgUtils.addToFile('js/setup.js',
+                      js.join('\r'),
+                      cgUtils.ROUTE_MARKER,
+                      '\t');
     this.log.writeln(' updating'.green + ' %s','js/setup.js');
   }
 
   /*
     .state('state1', {
-      url: "/state1",
-      templateUrl: "partials/state1.html"
+      url: '/state1',
+      templateUrl: 'partials/state1.html'
     })
     .state('state1.list', {
-      url: "/list",
-      templateUrl: "partials/state1/list.html"
+      url: '/list',
+      templateUrl: 'partials/state1/list.html'
     })
     .state('state2', {
-      url: "/state2",
-      templateUrl: "partials/state2.html"
+      url: '/state2',
+      templateUrl: 'partials/state2.html'
     })
    */
 

@@ -5,8 +5,8 @@ angular.module('<%= appname %>').factory('<%= name %>', function () {
 
   }
 
-  // <%= name %>.prototype.myInstanceMethod = function() {
-  //    
+  // <%= name %>.prototype.myInstanceMethod = function () {
+  //
   // }
 
   return <%= name %>;

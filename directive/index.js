@@ -4,7 +4,7 @@ var yeoman = require('yeoman-generator');
 var path = require('path');
 var cgUtils = require('../utils.js');
 
-var DirectiveGenerator = module.exports = function DirectiveGenerator(args, options, config) {
+var DirectiveGenerator = module.exports = function DirectiveGenerator() {
 
   yeoman.generators.NamedBase.apply(this, arguments);
 
@@ -36,28 +36,55 @@ DirectiveGenerator.prototype.askFor = function askFor() {
 };
 
 DirectiveGenerator.prototype.files = function files() {
+  var nameName = this.name + '/' + this.name;
+  var pathEnd = '.js"></script>';
 
-  if (this.needpartial){
-    this.template('directive.js', 'directive/'+this.name+'/'+this.name+'.js');
-    this.template('directive.html', 'directive/'+this.name+'/'+this.name+'.html');
-    this.template('directive.less', 'directive/'+this.name+'/'+this.name+'.less');
-    this.template('spec.js', 'test/unit/directive/'+this.name+'.js');
+  if (this.needpartial) {
+    this.template('directive.js',
+                  'directive/' + nameName + '.js');
+    this.template('directive.html',
+                  'directive/' + nameName + '.html');
+    this.template('directive.less',
+                  'directive/' + nameName + '.less');
+    this.template('spec.js',
+                  'test/unit/directive/' + this.name + '.js');
 
-    cgUtils.addToFile('index.html','<script src="directive/'+this.name+'/'+this.name+'.js"></script>',cgUtils.DIRECTIVE_JS_MARKER,'  ');
-    cgUtils.addToFile('test/unit/index.html','<script src="../../directive/'+this.name+'/'+this.name+'.js"></script>',cgUtils.DIRECTIVE_JS_MARKER,'  ');
-    cgUtils.addToFile('test/unit/index.html','<script src="directive/'+this.name+'.js"></script>',cgUtils.DIRECTIVE_JS_TEST_MARKER,'  ');
-    this.log.writeln(' updating'.green + ' %s','index.html');
+    cgUtils.addToFile('index.html',
+                      '<script src="directive/' + nameName + pathEnd,
+                      cgUtils.DIRECTIVE_JS_MARKER,
+                      '  ');
+    cgUtils.addToFile('test/unit/index.html',
+                      '<script src="../../directive/' + nameName + pathEnd,
+                      cgUtils.DIRECTIVE_JS_MARKER,'  ');
+    cgUtils.addToFile('test/unit/index.html',
+                      '<script src="directive/' + this.name + pathEnd,
+                      cgUtils.DIRECTIVE_JS_TEST_MARKER,
+                      '  ');
 
-    cgUtils.addToFile('css/app.less','@import "../directive/'+this.name+'/'+this.name+'.less";',cgUtils.DIRECTIVE_LESS_MARKER,'');
-    this.log.writeln(' updating'.green + ' %s','app/app.less'); 
+    this.log.writeln(' updating'.green + ' %s', 'index.html');
+
+    cgUtils.addToFile('css/app.less',
+                      '@import "../directive/'+ nameName + '";',
+                      cgUtils.DIRECTIVE_LESS_MARKER,
+                      '');
+    this.log.writeln(' updating'.green + ' %s', 'app/app.less');
   } else {
-    this.template('directive_simple.js', 'directive/'+this.name+'.js');
-    this.template('spec_simple.js', 'test/unit/directive/'+this.name+'.js'); 
+    this.template('directive_simple.js', 'directive/' + this.name + '.js');
+    this.template('spec_simple.js', 'test/unit/directive/' + this.name + '.js');
 
-    cgUtils.addToFile('index.html','<script src="directive/'+this.name+'.js"></script>',cgUtils.DIRECTIVE_JS_MARKER,'  ');
-    cgUtils.addToFile('test/unit/index.html','<script src="../../directive/'+this.name+'.js"></script>',cgUtils.DIRECTIVE_JS_MARKER,'  ');
-    cgUtils.addToFile('test/unit/index.html','<script src="directive/'+this.name+'.js"></script>',cgUtils.DIRECTIVE_JS_TEST_MARKER,'  ');
-    this.log.writeln(' updating'.green + ' %s','index.html');     
+    cgUtils.addToFile('index.html',
+                      '<script src="directive/' + this.name + pathEnd,
+                      cgUtils.DIRECTIVE_JS_MARKER,
+                      '  ');
+    cgUtils.addToFile('test/unit/index.html',
+                      '<script src="../../directive/' + this.name + pathEnd,
+                      cgUtils.DIRECTIVE_JS_MARKER,
+                      '  ');
+    cgUtils.addToFile('test/unit/index.html',
+                      '<script src="directive/' + this.name + pathEnd,
+                      cgUtils.DIRECTIVE_JS_TEST_MARKER,
+                      '  ');
+    this.log.writeln(' updating'.green + ' %s', 'index.html');
   }
 
 };

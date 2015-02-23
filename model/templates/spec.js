@@ -1,5 +1,4 @@
 describe('<%= name %>', function () {
-
   var <%= name %>;
 
   beforeEach(function () {
@@ -9,7 +8,7 @@ describe('<%= name %>', function () {
     });
   });
 
-  it('can be instantiated', function () {
+  xit('can be instantiated', function () {
     expect(new <%= name %>()).to.be.instanceof(<%= name %>);
   });
 

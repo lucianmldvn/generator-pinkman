@@ -8,7 +8,7 @@ var _ = require('underscore');
 _.str = require('underscore.string');
 _.mixin(_.str.exports());
 
-var ModelGenerator = module.exports = function ModelGenerator(args, options, config) {
+var ModelGenerator = module.exports = function ModelGenerator() {
 
   yeoman.generators.NamedBase.apply(this, arguments);
 
@@ -23,12 +23,21 @@ var ModelGenerator = module.exports = function ModelGenerator(args, options, con
 util.inherits(ModelGenerator, yeoman.generators.NamedBase);
 
 ModelGenerator.prototype.files = function files() {
-  this.name = _.capitalize(this.name);
-  this.template('model.js', 'model/'+this.name+'.js');
-  this.template('spec.js', 'test/unit/model/'+this.name+'.js');
+  var name = _.capitalize(this.name);
+  this.template('model.js', 'model/' + name + '.js');
+  this.template('spec.js', 'test/unit/model/' + name + '.js');
 
-  cgUtils.addToFile('index.html','<script src="model/'+this.name+'.js"></script>',cgUtils.MODEL_JS_MARKER,'  ');
-  cgUtils.addToFile('test/unit/index.html','<script src="../../model/'+this.name+'.js"></script>',cgUtils.MODEL_JS_MARKER,'  ');
-  cgUtils.addToFile('test/unit/index.html','<script src="model/'+this.name+'.js"></script>',cgUtils.MODEL_JS_TEST_MARKER,'  ');
+  cgUtils.addToFile('index.html',
+                    '<script src="model/' + name + '.js"></script>',
+                    cgUtils.MODEL_JS_MARKER,
+                    '  ');
+  cgUtils.addToFile('test/unit/index.html',
+                    '<script src="../../model/' + name + '.js"></script>',
+                    cgUtils.MODEL_JS_MARKER,
+                    '  ');
+  cgUtils.addToFile('test/unit/index.html',
+                    '<script src="model/' + name + '.js"></script>',
+                    cgUtils.MODEL_JS_TEST_MARKER,
+                    '  ');
   this.log.writeln(' updating'.green + ' %s','index.html');
 };

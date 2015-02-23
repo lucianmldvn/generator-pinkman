@@ -1,6 +1,9 @@
 describe('<%= name %>', function () {
-
-  var $compile, $templateCache, outerScope, scope, element;
+  var $compile;
+  var $templateCache;
+  var outerScope;
+  var scope;
+  var element;
 
   beforeEach(function () {
     module('<%= appname %>');
@@ -17,5 +20,5 @@ describe('<%= name %>', function () {
   });
 
   it('should have tests');
-  
+
 });
