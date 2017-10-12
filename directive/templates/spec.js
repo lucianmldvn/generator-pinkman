@@ -1,4 +1,4 @@
-describe('<%= _.camelCase(name) %>', function () {
+describe('<%= _.camelize(name) %>', function () {
 
     var $compile, $templateCache, outerScope, scope, element;
 
@@ -11,7 +11,7 @@ describe('<%= _.camelCase(name) %>', function () {
         });
 
         $templateCache.put('directive/<%= _.trim(_.dasherize(name), '-') %>/<%= _.trim(_.dasherize(name), '-') %>.html', '<div></div>');
-        element = $compile('<<%= _.camelCase(name) %>></<%= _.camelCase(name) %>>')(outerScope);
+        element = $compile('<<%= _.camelize(name) %>></<%= _.camelize(name) %>>')(outerScope);
         outerScope.$digest();
         scope = element.isolateScope();
     });

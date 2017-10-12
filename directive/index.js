@@ -40,7 +40,7 @@ DirectiveGenerator.prototype.files = function files() {
     if (this.needpartial) {
         this.template('directive.js', 'directive/' + _.trim(_.dasherize(this.name), '-') + '/' + _.trim(_.dasherize(this.name), '-') + '.js');
         this.template('directive.html', 'directive/' + _.trim(_.dasherize(this.name), '-') + '/' + _.trim(_.dasherize(this.name), '-') + '.html');
-        this.template('directive.scss', 'directive/' + _.trim(_.dasherize(this.name), '-') + '/' + _.trim(_.dasherize(this.name), '-') + '.scss');
+        this.template('directive.less', 'directive/' + _.trim(_.dasherize(this.name), '-') + '/' + _.trim(_.dasherize(this.name), '-') + '.less');
         this.template('spec.js', 'test/unit/directive/' + _.trim(_.dasherize(this.name), '-') + '.js');
 
         cgUtils.addToFile('index.html', '<script src="directive/' + _.trim(_.dasherize(this.name), '-') + '/' + _.trim(_.dasherize(this.name), '-') + '.js"></script>', cgUtils.DIRECTIVE_JS_MARKER, '  ');
@@ -48,8 +48,8 @@ DirectiveGenerator.prototype.files = function files() {
         cgUtils.addToFile('test/unit/index.html', '<script src="directive/' + _.trim(_.dasherize(this.name), '-') + '.js"></script>', cgUtils.DIRECTIVE_JS_TEST_MARKER, '  ');
         this.log.writeln(' updating'.green + ' %s', 'index.html');
 
-        cgUtils.addToFile('css/app.scss', '@import "../directive/' + _.trim(_.dasherize(this.name), '-') + '/' + _.trim(_.dasherize(this.name), '-') + '.scss";', cgUtils.DIRECTIVE_SCSS_MARKER, '');
-        this.log.writeln(' updating'.green + ' %s', 'app/app.scss');
+        cgUtils.addToFile('css/app.less', '@import "../directive/' + _.trim(_.dasherize(this.name), '-') + '/' + _.trim(_.dasherize(this.name), '-') + '.less";', cgUtils.DIRECTIVE_LESS_MARKER, '');
+        this.log.writeln(' updating'.green + ' %s', 'app/app.less');
     } else {
         this.template('directive_simple.js', 'directive/' + _.trim(_.dasherize(this.name), '-') + '.js');
         this.template('spec_simple.js', 'test/unit/directive/' + _.trim(_.dasherize(this.name), '-') + '.js');

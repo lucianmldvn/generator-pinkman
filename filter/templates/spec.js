@@ -1,11 +1,11 @@
-describe('<%= _.camelCase(name) %>', function () {
+describe('<%= _.camelize(name) %>', function () {
 
     var filter;
 
     beforeEach(function () {
         module('<%= appname %>');
         inject(function ($filter) {
-            filter = $filter('<%= _.camelCase(name) %>');
+            filter = $filter('<%= _.camelize(name) %>');
         });
     });
 

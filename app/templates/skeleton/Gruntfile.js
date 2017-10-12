@@ -136,14 +136,19 @@ module.exports = function (grunt) {
                 src: 'dist/index.html'
             }
         },
-        autoprefixer: {
+        postcss: {
             options: {
-                browsers: ['last 2 versions']
+                map: true,
+                processors: [
+                    require('autoprefixer')({
+                        browsers: ['last 2 versions']
+                    })
+                ]
             },
-            your_target: {
+            dist: {
                 src: 'temp/app.css',
                 dest: 'temp/screen.css'
-            },
+            }
         },
         cssmin: {
             main: {
@@ -157,7 +162,7 @@ module.exports = function (grunt) {
                 dest: 'temp/app.full.js'
             }
         },
-        ngmin: {
+        ngAnnotate: {
             main: {
                 src: 'temp/app.full.js',
                 dest: 'temp/app.full.js'
@@ -212,13 +217,42 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.loadNpmTasks('grunt-ngmin');
+    grunt.loadNpmTasks('grunt-ng-annotate');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-mocha');
-    grunt.loadNpmTasks('grunt-autoprefixer');
+    grunt.loadNpmTasks('grunt-postcss');
 
-    grunt.registerTask('build', ['clean:before', 'less', 'autoprefixer', 'dom_munger:readcss', 'dom_munger:readscripts', 'ngtemplates', 'cssmin', 'concat', 'ngmin', 'uglify', 'copy', 'dom_munger:removecss', 'dom_munger:addcss', 'dom_munger:removescripts', 'dom_munger:addscript', 'htmlmin', 'imagemin', 'clean:after']);
-    grunt.registerTask('test', ['jshint', 'mocha']);
-    grunt.registerTask('server', ['connect']);
-    grunt.registerTask('default', ['test', 'less', 'server', 'watch']);
+    grunt.registerTask('build', [
+        'clean:before',
+        'less',
+        'postcss',
+        'dom_munger:readcss',
+        'dom_munger:readscripts',
+        'ngtemplates', 'cssmin',
+        'concat',
+        'ngAnnotate',
+        'uglify',
+        'copy',
+        'dom_munger:removecss',
+        'dom_munger:removescripts',
+        'htmlmin',
+        'imagemin',
+        'clean:after'
+    ]);
+
+    grunt.registerTask('test', [
+        'jshint',
+        'mocha'
+    ]);
+
+    grunt.registerTask('server', [
+        'connect'
+    ]);
+
+    grunt.registerTask('default', [
+        'test',
+        'less',
+        'server',
+        'watch'
+    ]);
 };

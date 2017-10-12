@@ -1,4 +1,4 @@
-angular.module('<%= appname %>').directive('<%= _.camelCase(name) %>', function () {
+angular.module('<%= appname %>').directive('<%= _.camelize(name) %>', function () {
     'use strict';
 
     return {

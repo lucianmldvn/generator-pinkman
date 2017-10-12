@@ -1,4 +1,4 @@
-describe('<%= _.camelCase(name) %>', function () {
+describe('<%= _.camelize(name) %>', function () {
 
     var $compile, outerScope, scope;
 

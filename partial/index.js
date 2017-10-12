@@ -44,13 +44,13 @@ PartialGenerator.prototype.askFor = function askFor() {
 PartialGenerator.prototype.files = function files() {
 
     this.ctrlname = _.capitalize(_.camelize(this.name.replace(/\//g, '-'))) + 'Ctrl';
-
+    this.asCtrlname = _.camelize(this.name.replace(/\//g, '-')) + 'Ctrl';
     var filename = _.trim(_.dasherize(this.name), '-');
     var directoryName = _.trim(_.dasherize(this.name), '-');
 
     this.template('partial.js', 'partial/' + directoryName + '/' + filename + '.js');
     this.template('partial.html', 'partial/' + directoryName + '/' + filename + '.html');
-    this.template('partial.scss', 'partial/' + directoryName + '/' + filename + '.scss');
+    this.template('partial.less', 'partial/' + directoryName + '/' + filename + '.less');
     this.template('spec.js', 'test/unit/controller/' + directoryName + '.js');
 
     cgUtils.addToFile('index.html', '<script src="partial/' + directoryName + '/' + filename + '.js"></script>', cgUtils.PARTIAL_JS_MARKER, '  ');
@@ -60,8 +60,8 @@ PartialGenerator.prototype.files = function files() {
 
     this.log.writeln(' updating'.green + ' %s', 'index.html');
 
-    cgUtils.addToFile('css/app.scss', '@import "../partial/' + directoryName + '/' + filename + '.scss";', cgUtils.PARTIAL_SCSS_MARKER, '');
-    this.log.writeln(' updating'.green + ' %s', 'app/app.scss');
+    cgUtils.addToFile('css/app.less', '@import "../partial/' + directoryName + '/' + filename + '.less";', cgUtils.PARTIAL_LESS_MARKER, '');
+    this.log.writeln(' updating'.green + ' %s', 'app/app.less');
 
     if (this.route && this.route.length > 0) {
         var js = [
