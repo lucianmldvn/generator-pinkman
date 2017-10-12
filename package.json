@@ -3,15 +3,15 @@
     "version": "0.1.0",
     "description": "Yeoman Generator for Angular projects.",
     "keywords": [
-    "yeoman-generator",
-    "angular"
-  ],
+        "yeoman-generator",
+        "angular"
+    ],
     "homepage": "https://github.com/lucianmldvn/generator-pinkman",
     "bugs": "https://github.com/lucianmldvn/generator-pinkman/issues",
     "author": {
         "name": "Lucian Moldovan",
         "email": "lucianmldvn@outlook.com",
-        "url": "https://github.com/lucianmoldovan"
+        "url": "https://github.com/lucianmldvn"
     },
     "main": "app/index.js",
     "repository": {
@@ -22,8 +22,8 @@
         "test": "mocha"
     },
     "dependencies": {
-        "yeoman-generator": "0.13.0",
-        "underscore": "1.4.4",
+        "yeoman-generator": "^0.13.0",
+        "underscore": "^1.4.4",
         "underscore.string": "^2.3.3"
     },
     "devDependencies": {
@@ -32,6 +32,5 @@
     "engines": {
         "node": ">=0.8.0"
     },
-    "license": "MIT",
-    "preferGlobal": true
+    "license": "MIT"
 }

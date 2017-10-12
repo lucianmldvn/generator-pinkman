@@ -3,6 +3,10 @@ var util = require('util');
 var yeoman = require('yeoman-generator');
 var path = require('path');
 var cgUtils = require('../utils.js');
+var _ = require('underscore');
+
+_.str = require('underscore.string');
+_.mixin(_.str.exports());
 
 var FilterGenerator = module.exports = function FilterGenerator(args, options, config) {
 
