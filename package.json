@@ -1,6 +1,6 @@
 {
   "name": "generator-pinkman",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Yeoman Generator for Angular projects.",
   "keywords": [
     "yeoman-generator",
