@@ -1,7 +1,7 @@
 #Mr. White Angular generator
 
                ...... .......... . ..,,,,:...
-      .    ... ,.,,;,L;,;:,,.,..:,,:,ii:;,,. 
+      .    ... ,.,,;,L;,;:,,.,..:,,:,ii:;,,.
     i ..@    .:;,,.,.,,,,:ii:i;::;1,, ...,,.. ██╗   ██╗ ██████╗
      t0::   ...ff,...  ..,,:::,......:LGG01,. ╚██╗ ██╔╝██╔═══██╗
       101. .:18@@@@C,..,;,@i;@C;;..,:fG@@@@f.  ╚████╔╝ ██║   ██║
@@ -12,8 +12,8 @@
             .G@11,....,fCi,.. ..,:@1:,,,,,.,.
             .,i::,::@L:8@C,...,:,t@;:@@;,.;,  ███╗   ███╗██████╗     ██╗    ██╗██╗  ██╗██╗████████╗███████╗
              .:i@it,:,LL@@@@@@C@@@@@@@8C,,G.  ████╗ ████║██╔══██╗    ██║    ██║██║  ██║██║╚══██╔══╝██╔════╝
-            , ,;@.:;@@@@@@@@@@@@@@@@@@@@;1t.. ██╔████╔██║██████╔╝    ██║ █╗ ██║███████║██║   ██║   █████╗ 
-               0@:i8@@:;iLLiG.;:;i8G:;@@C8;   ██║╚██╔╝██║██╔══██╗    ██║███╗██║██╔══██║██║   ██║   ██╔══╝  
+            , ,;@.:;@@@@@@@@@@@@@@@@@@@@;1t.. ██╔████╔██║██████╔╝    ██║ █╗ ██║███████║██║   ██║   █████╗
+               0@:i8@@:;iLLiG.;:;i8G:;@@C8;   ██║╚██╔╝██║██╔══██╗    ██║███╗██║██╔══██║██║   ██║   ██╔══╝
                 C,LL@f;,::L@@@@@@81it1f@@C    ██║ ╚═╝ ██║██║  ██║    ╚███╔███╔╝██║  ██║██║   ██║   ███████╗
                  8:@@Gi;;f@@@@@@@@@0@@@81.    ╚═╝     ╚═╝╚═╝  ╚═╝     ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝   ╚═╝   ╚══════╝
                   :@@@@@@@@@@@@@@@@@@@@@
@@ -27,8 +27,8 @@ A fork of [generator-cg-angular](https://github.com/cgross/generator-cg-angular/
 
 Features
 
-* Provides a directory structure geared towards large Angular projects.  
-    * Each controller, service, filter, and directive are placed in their own file.  
+* Provides a directory structure geared towards large Angular projects.
+    * Each controller, service, filter, and directive are placed in their own file.
     * All files related to a conceptual unit are placed together.  For example, the controller and HTML file for a partial are placed together in the same directory.
 * Provides a ready-made Grunt build that produces an extremely optimized distribution.
    * Build uses [grunt-ngmin](https://github.com/btford/grunt-ngmin) so you don't have to use the Angular injection syntax for safe minification (i.e. you dont need `$inject` or `(['$scope','$http',...`.
@@ -129,7 +129,7 @@ The project will include a ready-made Grunt build that will:
 
 * Build all the SCSS files into one minified CSS file.
 * Uses [grunt-angular-templates](https://github.com/ericclemmons/grunt-angular-templates) to turn all your partials into Javascript.
-* Uses [grunt-ngmin](https://github.com/btford/grunt-ngmin) to preprocess all Angular injectable methods and add the necessary Angular annotations to ensure minification will not break your app (and you don't have to use the array syntax to 
+* Uses [grunt-ngmin](https://github.com/btford/grunt-ngmin) to preprocess all Angular injectable methods and add the necessary Angular annotations to ensure minification will not break your app (and you don't have to use the array syntax to
 manually add the annotations nor $inject).  Read more about [ngmin](https://github.com/btford/ngmin).
 * Concatenates and minifies all Javascript into one file.
 * Replaces all appropriate script references in `index.html` with the minified CSS and JS files.

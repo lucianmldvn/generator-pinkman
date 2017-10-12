@@ -1,40 +1,38 @@
 {
-  "name": "generator-mrwhite",
-  "version": "0.2.0",
-  "description": "Yeoman Generator for Large Angular projects.",
-  "keywords": [
-    "yeoman-generator",
-    "angular"
-  ],
-  "homepage": "https://github.com/Iteam1337/generator-mrwhite",
-  "bugs": "https://github.com/Iteam1337/generator-mrwhite/issues",
-  "author": {
-    "name": "Johan Öbrink",
-    "email": "johan.obrink@gmail.com",
-    "url": "https://github.com/JohanObrink"
-  },
-  "main": "app/index.js",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/Iteam1337/generator-mrwhite.git"
-  },
-  "scripts": {
-    "test": "mocha"
-  },
-  "dependencies": {
-    "yeoman-generator": "0.13.0",
-    "underscore": "1.4.4",
-    "underscore.string": "^2.3.3"
-  },
-  "devDependencies": {
-    "mocha": "^1.17.1"
-  },
-  "engines": {
-    "node": ">=0.8.0"
-  },
-  "licenses": [
-    {
-      "type": "MIT"
-    }
-  ]
+    "name": "generator-pinkman",
+    "version": "0.1.0",
+    "description": "Yeoman Generator for Large Angular projects.",
+    "keywords": [
+        "yeoman-generator",
+        "angular"
+    ],
+    "homepage": "https://github.com/lucianmldvn/generator-pinkman",
+    "bugs": "https://github.com/lucianmldvn/generator-pinkman/issues",
+    "author": {
+        "name": "Lucian Moldovan",
+        "email": "lucianmldvn@outlook.com",
+        "url": "https://github.com/lucianmldvn"
+    },
+    "main": "app/index.js",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/lucianmldvn/generator-pinkman.git"
+    },
+    "scripts": {
+        "test": "mocha"
+    },
+    "dependencies": {
+        "yeoman-generator": "0.13.0",
+        "underscore": "1.4.4",
+        "underscore.string": "^2.3.3"
+    },
+    "devDependencies": {
+        "mocha": "^1.17.1"
+    },
+    "engines": {
+        "node": ">=0.8.0"
+    },
+    "licenses": [{
+        "type": "MIT"
+    }]
 }
