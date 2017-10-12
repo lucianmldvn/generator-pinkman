@@ -1,17 +1,17 @@
 {
     "name": "generator-pinkman",
     "version": "0.1.0",
-    "description": "Yeoman Generator for Large Angular projects.",
+    "description": "Yeoman Generator for Angular projects.",
     "keywords": [
-        "yeoman-generator",
-        "angular"
-    ],
+    "yeoman-generator",
+    "angular"
+  ],
     "homepage": "https://github.com/lucianmldvn/generator-pinkman",
     "bugs": "https://github.com/lucianmldvn/generator-pinkman/issues",
     "author": {
         "name": "Lucian Moldovan",
         "email": "lucianmldvn@outlook.com",
-        "url": "https://github.com/lucianmldvn"
+        "url": "https://github.com/lucianmoldovan"
     },
     "main": "app/index.js",
     "repository": {
@@ -32,7 +32,6 @@
     "engines": {
         "node": ">=0.8.0"
     },
-    "licenses": [{
-        "type": "MIT"
-    }]
+    "license": "MIT",
+    "preferGlobal": true
 }

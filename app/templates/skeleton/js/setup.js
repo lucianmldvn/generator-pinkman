@@ -1,27 +1,51 @@
-angular.module('<%= _.slugify(appname) %>', ['ui.router', 'ngResource']);
+// ------------------------------------------------------------------------------------------------
+// MODULE DEPENDENCIES
+// ------------------------------------------------------------------------------------------------
+angular.module('<%= _.trim(_.dasherize(appname), '-') %>', ['ui.router', 'ngResource', 'ngAnimate']);
 
-angular.module('<%= _.slugify(appname) %>').config(function ($stateProvider, $urlRouterProvider) {
-  'use strict';
+// ------------------------------------------------------------------------------------------------
+// CONSTANTS and VARIABLES
+// ------------------------------------------------------------------------------------------------
 
-  /* Add New Routes Above */
-  
-  // For any unmatched url, redirect to /
-  $urlRouterProvider.otherwise("/");
+
+// ------------------------------------------------------------------------------------------------
+// CONFIG
+// ------------------------------------------------------------------------------------------------
+angular.module('<%= _.trim(_.dasherize(appname), '-') %>').config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
+    'use strict';
+
+    // -------------------------------------------
+    // HTTP CONFIG
+    // -------------------------------------------
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+
+    // -------------------------------------------
+    // ROUTES
+    // -------------------------------------------
+
+    /* Add New Routes Above */
+
+    // For any unmatched url, redirect to /
+    $urlRouterProvider.otherwise("/");
 
 });
 
-angular.module('<%= _.slugify(appname) %>').run(function ($rootScope) {
-  'use strict';
+// ------------------------------------------------------------------------------------------------
+// RUN
+// ------------------------------------------------------------------------------------------------
+angular.module('<%= _.trim(_.dasherize(appname), '-') %>').run(function ($rootScope) {
+    'use strict';
 
-  $rootScope.safeApply = function (fn) {
-    var phase = $rootScope.$$phase;
-    if (phase === '$apply' || phase === '$digest') {
-      if (fn && (typeof(fn) === 'function')) {
-        fn();
-      }
-    } else {
-      this.$apply(fn);
-    }
-  };
+    $rootScope.safeApply = function (fn) {
+        var phase = $rootScope.$$phase;
+        if (phase === '$apply' || phase === '$digest') {
+            if (fn && (typeof (fn) === 'function')) {
+                fn();
+            }
+        } else {
+            this.$apply(fn);
+        }
+    };
 
 });

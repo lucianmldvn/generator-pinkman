@@ -1,8 +1,8 @@
-angular.module('<%= appname %>').filter('<%= name %>', function () {
-  'use strict';
+angular.module('<%= appname %>').filter('<%= _.camelCase(name) %>', function () {
+    'use strict';
 
-  return function (input, arg) {
-    return '';
-  };
+    return function (input, arg) {
+        return '';
+    };
 
 });

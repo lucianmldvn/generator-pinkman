@@ -1,79 +1,90 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="utf-8">
-  <title><%= _.slugify(appname) %> - Mocha Tests</title>
-  <link rel="stylesheet" href="../../node_modules/mocha/mocha.css" />
+    <meta charset="utf-8">
+    <title>
+        <%= _.trim(_.dasherize(appname), '-') %> - Mocha Tests</title>
+    <link rel="stylesheet" href="../../node_modules/mocha/mocha.css" />
 </head>
+
 <body>
 
-  <div id="mocha"></div>
+    <div id="mocha"></div>
 
-  <!-- Livereload script for development only (stripped during dist build) -->
-  <script src="http://localhost:35729/livereload.js"></script>
+    <!-- Livereload script for development only (stripped during dist build) -->
+    <script src="http://localhost:35729/livereload.js"></script>
 
-  <!-- JS from Bower components -->
-  <script src="../../bower_components/less/dist/less-1.5.1.js"></script>
-  <script src="../../bower_components/angular/angular.js"></script>
-  <script src="../../bower_components/angular-resource/angular-resource.js"></script>
-  <script src="../../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-  <script src="../../bower_components/moment/moment.js"></script>
+    <!-- JS from Bower components -->
+    <script src="../../bower_components/less/dist/less-1.5.1.js"></script>
+    <script src="../../bower_components/angular/angular.js"></script>
+    <script src="../../bower_components/angular-resource/angular-resource.js"></script>
+    <script src="../../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="../../bower_components/moment/moment.js"></script>
 
-  <!-- Test libraries -->
-  <script src="../../node_modules/mocha/mocha.js"></script>
-  <script>mocha.setup('bdd');</script>
-  <script src="../../node_modules/chai/chai.js"></script>
-  <script>var expect = chai.expect;</script>
-  <script src="../../node_modules/sinon-chai/lib/sinon-chai.js"></script>
-  <script src="../../node_modules/sinon/pkg/sinon.js"></script>
-  <script src="../../bower_components/angular-mocks/angular-mocks.js"></script>
+    <!-- Test libraries -->
+    <script src="../../node_modules/mocha/mocha.js"></script>
+    <script>
+        mocha.setup('bdd');
 
-  <!-- Code files -->
+    </script>
+    <script src="../../node_modules/chai/chai.js"></script>
+    <script>
+        var expect = chai.expect;
 
-  <!-- Main App JS -->
-  <script src="../../js/setup.js"></script>
+    </script>
+    <script src="../../node_modules/sinon-chai/lib/sinon-chai.js"></script>
+    <script src="../../node_modules/sinon/pkg/sinon.js"></script>
+    <script src="../../bower_components/angular-mocks/angular-mocks.js"></script>
 
-  <!-- Service JS -->
-  <!-- Add New Service JS Above --> 
+    <!-- Code files -->
 
-  <!-- Model JS -->
-  <!-- Add New Model JS Above --> 
+    <!-- Main App JS -->
+    <script src="../../js/setup.js"></script>
 
-  <!-- Directive JS -->
-  <!-- Add New Directive JS Above -->
+    <!-- Service JS -->
+    <!-- Add New Service JS Above -->
 
-  <!-- Filter JS -->
-  <!-- Add New Filter JS Above -->
+    <!-- Model JS -->
+    <!-- Add New Model JS Above -->
 
-  <!-- Partial JS -->
-  <!-- Add New Partial JS Above -->
+    <!-- Directive JS -->
+    <!-- Add New Directive JS Above -->
+
+    <!-- Filter JS -->
+    <!-- Add New Filter JS Above -->
+
+    <!-- Partial JS -->
+    <!-- Add New Partial JS Above -->
 
 
 
-  <!-- Test files -->
+    <!-- Test files -->
 
-  <!-- Service Test JS -->
-  <!-- Add New Service Test JS Above --> 
+    <!-- Service Test JS -->
+    <!-- Add New Service Test JS Above -->
 
-  <!-- Model Test JS -->
-  <!-- Add New Model Test JS Above --> 
+    <!-- Model Test JS -->
+    <!-- Add New Model Test JS Above -->
 
-  <!-- Directive Test JS -->
-  <!-- Add New Directive Test JS Above -->
+    <!-- Directive Test JS -->
+    <!-- Add New Directive Test JS Above -->
 
-  <!-- Filter Test JS -->
-  <!-- Add New Filter Test JS Above -->
+    <!-- Filter Test JS -->
+    <!-- Add New Filter Test JS Above -->
 
-  <!-- Partial Test JS -->
-  <!-- Add New Partial Test JS Above -->
+    <!-- Partial Test JS -->
+    <!-- Add New Partial Test JS Above -->
 
-  <!-- run mocha after all test are loaded -->
-  <script type="text/javascript" charset="utf-8">
-    // Only tests run in real browser, injected script run if options.run == true
-    if (navigator.userAgent.indexOf('PhantomJS') < 0) {
-      mocha.run();
-    }
-  </script>
-  
+    <!-- run mocha after all test are loaded -->
+    <script type="text/javascript" charset="utf-8">
+        // Only tests run in real browser, injected script run if options.run == true
+        if (navigator.userAgent.indexOf('PhantomJS') < 0) {
+            mocha.run();
+        }
+
+    </script>
+
 </body>
+
 </html>

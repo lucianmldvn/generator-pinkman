@@ -1,13 +1,13 @@
 angular.module('<%= appname %>').factory('<%= name %>', function () {
-  'use strict';
+    'use strict';
 
-  function <%= name %>() {
+    function <%= name %> () {
 
-  }
+    }
 
-  // <%= name %>.prototype.myInstanceMethod = function() {
-  //    
-  // }
+    // <%= name %>.prototype.MyInstanceMethod = function() {
+    //
+    // }
 
-  return <%= name %>;
+    return <%= name %>;
 });

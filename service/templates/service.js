@@ -1,7 +1,7 @@
 angular.module('<%= appname %>').service('<%= name %>', function () {
-  'use strict';
+    'use strict';
 
-  var <%= name %> = {};
+    var <%= name %> = {};
 
-  return <%= name %>;
+    return <%= name %>;
 });

@@ -1,11 +1,11 @@
-angular.module('<%= appname %>').directive('<%= name %>', function () {
-  'use strict';
+angular.module('<%= appname %>').directive('<%= _.camelCase(name) %>', function () {
+    'use strict';
 
-  return {
-    restrict: 'A',
-    link: function (scope, element, attrs, fn) {
+    return {
+        restrict: 'A',
+        link: function (scope, element, attrs, fn) {
 
 
-    }
-  };
+        }
+    };
 });
