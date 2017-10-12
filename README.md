@@ -12,43 +12,44 @@ Features
     * Each controller, service, filter, and directive are placed in their own file.
     * All files related to a conceptual unit are placed together.  For example, the controller and HTML file for a partial are placed together in the same directory.
 * Provides a ready-made Grunt build that produces an extremely optimized distribution.
-   * Build uses [grunt-ngmin](https://github.com/btford/grunt-ngmin) so you don't have to use the Angular injection syntax for safe minification (i.e. you dont need `$inject` or `(['$scope','$http',...`.
+   * Build uses [grunt-ng-annotate](https://github.com/mgol/grunt-ng-annotate) so you don't have to use the Angular injection syntax for safe minification (i.e. you dont need `$inject` or `(['$scope','$http',...])`.
 * Integrates Bower for package management
 * Includes Yeoman sub-generators for directives, services, partials, and filters
 * Integrates LESS.
-* Testable - Included Yeoman sub-generators also build test skeletons using mocha, chai, sinon sinon-chai and grunt-mocha.
-Run test via `grunt test`.
+    * Includes a LESS fle with general css classes that can be used across application
+* Testable - Included Yeoman sub-generators also build test skeletons using mocha, chai, sinon sinon-chai and grunt-mocha. Run test via `grunt test`.
 
 
 Directory Layout
 -------------
 Below is an explanation of the folder structure.
 
-    /css ........................... usually only contains app.less
-        app.less ................... main app-wide styles
-    /img ........................... images (not created by default but included in /dist if added)
-    /js ............................ app global javascript files
-        setup.js ................... angular module initialization and route setup
-    /directive ..................... angular directives folder
-        my-directive.js ............ example simple directive
-        /my-directive2 ............. example complex directive (contains external partial)
-            my-directive2.js ....... complex directive javascript
-            my-directive2.html...... complex directive partial
-            my-directive2.less ..... complex directive LESS
-    /filter ........................ angular filters folder
-        my-filter.js ............... example filter
-    /model ......................... angular models - a factory implementation of service for non singletons
-        MyModel.js ................. example model. Note the capital first letter in the naming
-    /partial ....................... angular partials folder
-        /my-partial ................ example partial
-            my-partial.html ........ example partial html
-            my-partial.js .......... example partial controller
-            my-partial.less ........ example partial LESS
-    /service ....................... angular services folder
-        my-service.js .............. example service
-    /dist .......................... distributable version of app built using grunt and Gruntfile.js
-    /bower_component................ 3rd party libraries managed by bower
-    /node_modules .................. npm managed libraries used by grunt
+    /css ......................... contains app-wide styles and co.
+        app.less ................. main app styles
+        general.less ............. general css classes that can be used across project
+    /img ......................... images (not created by default but included in /dist if added)
+    /js .......................... app global javascript files
+        setup.js ................. angular module initialization and route setup
+    /directive ................... angular directives folder
+        my-directive.js .......... example simple directive
+        /my-directive2 ........... example complex directive (contains external partial)
+            my-directive2.js ..... complex directive javascript
+            my-directive2.html.... complex directive partial
+            my-directive2.less ... complex directive LESS
+    /filter ...................... angular filters folder
+        my-filter.js ............. example filter
+    /model ....................... angular models - a factory implementation of service for non singletons
+        MyModel.js ............... example model. Note the capital first letter in the naming
+    /partial ..................... angular partials folder
+        /my-partial .............. example partial
+            my-partial.html ...... example partial html
+            my-partial.js ........ example partial controller
+            my-partial.less ...... example partial LESS
+    /service ..................... angular services folder
+        MyService.js ............. example service
+    /dist ........................ distributable version of app built using grunt and Gruntfile.js
+    /bower_components ............ 3rd party libraries managed by bower
+    /node_modules ................ npm managed libraries used by grunt
 
 >The `directive`, `filter`, `model`, `partial`, and `service` directories won't exist until one of the relevant components is created using a sub-generator.
 
