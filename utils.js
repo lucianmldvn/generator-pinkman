@@ -17,12 +17,12 @@ exports.addToFile = function (filename, lineToAdd, beforeMarker, spacing) {
     }
 };
 
-exports.DIRECTIVE_SCSS_MARKER = "/* Add Directive SCSS Above */";
+exports.DIRECTIVE_LESS_MARKER = "/* Add Directive LESS Above */";
 exports.DIRECTIVE_JS_MARKER = "<!-- Add New Directive JS Above -->";
 exports.FILTER_JS_MARKER = "<!-- Add New Filter JS Above -->";
 exports.SERVICE_JS_MARKER = "<!-- Add New Service JS Above -->";
 exports.MODEL_JS_MARKER = "<!-- Add New Model JS Above -->";
-exports.PARTIAL_SCSS_MARKER = "/* Add Partial SCSS Above */";
+exports.PARTIAL_LESS_MARKER = "/* Add Partial LESS Above */";
 exports.PARTIAL_JS_MARKER = "<!-- Add New Partial JS Above -->";
 
 

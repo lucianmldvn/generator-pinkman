@@ -15,7 +15,7 @@ Features
    * Build uses [grunt-ngmin](https://github.com/btford/grunt-ngmin) so you don't have to use the Angular injection syntax for safe minification (i.e. you dont need `$inject` or `(['$scope','$http',...`.
 * Integrates Bower for package management
 * Includes Yeoman sub-generators for directives, services, partials, and filters
-* Integrates LESS/SCSS.
+* Integrates LESS.
 * Testable - Included Yeoman sub-generators also build test skeletons using mocha, chai, sinon sinon-chai and grunt-mocha.
 Run test via `grunt test`.
 
@@ -24,8 +24,8 @@ Directory Layout
 -------------
 Below is an explanation of the folder structure.
 
-    /css ........................... usually only contains app.scss
-        app.scss ................... main app-wide styles
+    /css ........................... usually only contains app.less
+        app.less ................... main app-wide styles
     /img ........................... images (not created by default but included in /dist if added)
     /js ............................ app global javascript files
         setup.js ................... angular module initialization and route setup
@@ -34,7 +34,7 @@ Below is an explanation of the folder structure.
         /my-directive2 ............. example complex directive (contains external partial)
             my-directive2.js ....... complex directive javascript
             my-directive2.html...... complex directive partial
-            my-directive2.scss ..... complex directive SCSS
+            my-directive2.less ..... complex directive LESS
     /filter ........................ angular filters folder
         my-filter.js ............... example filter
     /model ......................... angular models - a factory implementation of service for non singletons
@@ -43,7 +43,7 @@ Below is an explanation of the folder structure.
         /my-partial ................ example partial
             my-partial.html ........ example partial html
             my-partial.js .......... example partial controller
-            my-partial.scss ........ example partial LESS
+            my-partial.less ........ example partial LESS
     /service ....................... angular services folder
         my-service.js .............. example service
     /dist .......................... distributable version of app built using grunt and Gruntfile.js
@@ -87,10 +87,10 @@ Yeoman Subgenerators
 
 There are a set of sub-generators to initialize empty Angular components.  Each of these generators will:
 
-* Create one or more skeleton files (javascript, SCSS, html, etc) for the component type
+* Create one or more skeleton files (javascript, LESS, html, etc) for the component type
 * Create a skeleton unit test in /test
 * Update index.html and add the necessary `script` tags.
-* Update app.scss and add the @import as needed.
+* Update app.less and add the @import as needed.
 * For partials, update the setup.js, adding the necessary route call if a route was entered in the generator prompts.
 
 There are generators for `directive`,`partial`,`service`,`model` and `filter`.
@@ -113,7 +113,7 @@ Build Process
 
 The project will include a ready-made Grunt build that will:
 
-* Build all the SCSS files into one minified CSS file.
+* Build all the LESS files into one minified CSS file.
 * Uses [grunt-angular-templates](https://github.com/ericclemmons/grunt-angular-templates) to turn all your partials into Javascript.
 * Uses [grunt-ngmin](https://github.com/btford/grunt-ngmin) to preprocess all Angular injectable methods and add the necessary Angular annotations to ensure minification will not break your app (and you don't have to use the array syntax to
 manually add the annotations nor $inject).  Read more about [ngmin](https://github.com/btford/ngmin).
