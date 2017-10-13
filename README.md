@@ -1,9 +1,6 @@
-#Pinkman
-#####Yeoman Generator for Angular Projects
-
->A fork of [generator-mrwhite](https://github.com/Iteam1337/generator-mrwhite)
-
--------------
+# Pinkman
+A fork of [generator-mrwhite](https://github.com/Iteam1337/generator-mrwhite)
+#### Yeoman Generator for Angular Projects
 
 Features
 -------------
