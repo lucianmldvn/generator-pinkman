@@ -23,7 +23,7 @@ var ServiceGenerator = module.exports = function ServiceGenerator(args, options,
 util.inherits(ServiceGenerator, yeoman.generators.NamedBase);
 
 ServiceGenerator.prototype.files = function files() {
-    this.name = _.capitalize(_.camelize(this.name));
+    this.name = _.classify(_.underscored(this.name));
 
     this.template('service.js', 'service/' + this.name + '.js');
     this.template('spec.js', 'test/unit/service/' + this.name + '.js');

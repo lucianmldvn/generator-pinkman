@@ -24,7 +24,7 @@ var InterceptorGenerator = module.exports = function ModelGenerator(args, option
 util.inherits(InterceptorGenerator, yeoman.generators.NamedBase);
 
 InterceptorGenerator.prototype.files = function files() {
-    this.name = _.classify(this.name);
+    this.name = _.classify(_.underscored(this.name));
 
     this.template('interceptor.js', 'interceptor/' + this.name + '.js');
     this.template('spec.js', 'test/unit/interceptor/' + this.name + '.js');
