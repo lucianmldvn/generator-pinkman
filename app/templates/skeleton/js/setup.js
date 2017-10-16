@@ -20,6 +20,8 @@ angular.module('<%= _.trim(_.dasherize(appname), '-') %>').config(function ($sta
     $httpProvider.defaults.useXDomain = true;
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
+    /* Add New Interceptors Above */
+
     // -------------------------------------------
     // ROUTES
     // -------------------------------------------

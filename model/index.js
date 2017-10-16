@@ -1,4 +1,5 @@
 'use strict';
+
 var util = require('util');
 var yeoman = require('yeoman-generator');
 var path = require('path');
@@ -28,8 +29,8 @@ ModelGenerator.prototype.files = function files() {
     this.template('model.js', 'model/' + this.name + '.js');
     this.template('spec.js', 'test/unit/model/' + this.name + '.js');
 
-    cgUtils.addToFile('index.html', '<script src="model/' + this.name + '.js"></script>', cgUtils.MODEL_JS_MARKER, '  ');
-    cgUtils.addToFile('test/unit/index.html', '<script src="../../model/' + this.name + '.js"></script>', cgUtils.MODEL_JS_MARKER, '  ');
-    cgUtils.addToFile('test/unit/index.html', '<script src="model/' + this.name + '.js"></script>', cgUtils.MODEL_JS_TEST_MARKER, '  ');
+    cgUtils.addToFile('index.html', '<script src="model/' + this.name + '.js"></script>', cgUtils.MODEL_JS_MARKER, '    ');
+    cgUtils.addToFile('test/unit/index.html', '<script src="../../model/' + this.name + '.js"></script>', cgUtils.MODEL_JS_MARKER, '    ');
+    cgUtils.addToFile('test/unit/index.html', '<script src="model/' + this.name + '.js"></script>', cgUtils.MODEL_JS_TEST_MARKER, '    ');
     this.log.writeln(' updating'.green + ' %s', 'index.html');
 };

@@ -6,12 +6,12 @@ Features
 -------------
 
 * Provides a directory structure geared towards large Angular projects.
-    * Each controller, service, filter, and directive are placed in their own file.
+    * Each controller, service, filter, interceptor and directive are placed in their own file.
     * All files related to a conceptual unit are placed together.  For example, the controller and HTML file for a partial are placed together in the same directory.
 * Provides a ready-made Grunt build that produces an extremely optimized distribution.
    * Build uses [grunt-ng-annotate](https://github.com/mgol/grunt-ng-annotate) so you don't have to use the Angular injection syntax for safe minification (i.e. you dont need `$inject` or `(['$scope','$http',...])`.
 * Integrates Bower for package management
-* Includes Yeoman sub-generators for directives, services, partials, and filters
+* Includes Yeoman sub-generators for directives, services, partials, interceptors and filters
 * Integrates [Font Awesome](http://fontawesome.io)
 * Integrates LESS
     * Includes a LESS file with general css classes that can be used across application
@@ -37,6 +37,8 @@ Below is an explanation of the folder structure.
         my-directive2.js ..... complex directive javascript
         my-directive2.html.... complex directive partial
         my-directive2.less ... complex directive LESS
+/interceptor ................. angular interceptors folder
+    MyInterceptor.js ......... example interceptor
 /filter ...................... angular filters folder
     my-filter.js ............. example filter
 /model ....................... angular models - a factory implementation of service for non singletons
@@ -53,7 +55,7 @@ Below is an explanation of the folder structure.
 /node_modules ................ npm managed libraries used by grunt
 ~~~~
 
->The `directive`, `filter`, `model`, `partial`, and `service` directories won't exist until one of the relevant components is created using a sub-generator.
+>The `directive`, `interceptor`, `filter`, `model`, `partial`, and `service` directories won't exist until one of the relevant components is created using a sub-generator.
 
 
 Getting Started
@@ -96,17 +98,17 @@ There are a set of sub-generators to initialize empty Angular components.  Each 
 * Update app.less and add the @import as needed.
 * For partials, update the setup.js, adding the necessary route call if a route was entered in the generator prompts.
 
-There are generators for `directive`, `partial`, `service`, `model` and `filter`.
+There are generators for `directive`, `interceptor`, `partial`, `service`, `model` and `filter`.
 
 Running a generator:
 ~~~~
 yo pinkman:directive my-awesome-directive
+yo pinkman:interceptor MyInterceptor
 yo pinkman:partial my-partial
-yo pinkman:service my-service
+yo pinkman:service MyService
 yo pinkman:model MyModel
 yo pinkman:filter my-filter
 ~~~~
-The name paramater passed (i.e. 'my-awesome-directive') will be used for directory and/or file names.
 
 >One quick note, each sub-generator pulls the Angular app/module name from the package.json.  Therefore, if you choose to change the name of your Angular app/module, you must ensure that the name in the package.json stays in sync.
 

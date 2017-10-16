@@ -53,10 +53,10 @@ PartialGenerator.prototype.files = function files() {
     this.template('partial.less', 'partial/' + directoryName + '/' + filename + '.less');
     this.template('spec.js', 'test/unit/controller/' + directoryName + '.js');
 
-    cgUtils.addToFile('index.html', '<script src="partial/' + directoryName + '/' + filename + '.js"></script>', cgUtils.PARTIAL_JS_MARKER, '  ');
+    cgUtils.addToFile('index.html', '<script src="partial/' + directoryName + '/' + filename + '.js"></script>', cgUtils.PARTIAL_JS_MARKER, '    ');
 
-    cgUtils.addToFile('test/unit/index.html', '<script src="../../partial/' + directoryName + '/' + filename + '.js"></script>', cgUtils.PARTIAL_JS_MARKER, '  ');
-    cgUtils.addToFile('test/unit/index.html', '<script src="controller/' + directoryName + '.js"></script>', cgUtils.PARTIAL_JS_TEST_MARKER, '  ');
+    cgUtils.addToFile('test/unit/index.html', '<script src="../../partial/' + directoryName + '/' + filename + '.js"></script>', cgUtils.PARTIAL_JS_MARKER, '    ');
+    cgUtils.addToFile('test/unit/index.html', '<script src="controller/' + directoryName + '.js"></script>', cgUtils.PARTIAL_JS_TEST_MARKER, '    ');
 
     this.log.writeln(' updating'.green + ' %s', 'index.html');
 

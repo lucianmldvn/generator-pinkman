@@ -23,6 +23,7 @@ exports.DIRECTIVE_JS_MARKER = '<!-- Add New Directive JS Above -->';
 exports.FILTER_JS_MARKER = '<!-- Add New Filter JS Above -->';
 exports.SERVICE_JS_MARKER = '<!-- Add New Service JS Above -->';
 exports.MODEL_JS_MARKER = '<!-- Add New Model JS Above -->';
+exports.INTERCEPTOR_JS_MARKER = '<!-- Add New Interceptor JS Above -->';
 exports.PARTIAL_LESS_MARKER = '/* Add Partial LESS Above */';
 exports.PARTIAL_JS_MARKER = '<!-- Add New Partial JS Above -->';
 
@@ -31,6 +32,8 @@ exports.DIRECTIVE_JS_TEST_MARKER = '<!-- Add New Directive Test JS Above -->';
 exports.FILTER_JS_TEST_MARKER = '<!-- Add New Filter Test JS Above -->';
 exports.SERVICE_JS_TEST_MARKER = '<!-- Add New Service Test JS Above -->';
 exports.MODEL_JS_TEST_MARKER = '<!-- Add New Model Test JS Above -->';
+exports.INTERCEPTOR_JS_TEST_MARKER = '<!-- Add New Interceptor Test JS Above -->';
 exports.PARTIAL_JS_TEST_MARKER = '<!-- Add New Partial Test JS Above -->';
 
 exports.ROUTE_MARKER = '/* Add New Routes Above */';
+exports.INTERCEPTOR_MARKER = '/* Add New Interceptors Above */';

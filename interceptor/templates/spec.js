@@ -12,7 +12,6 @@ describe('<%= name %>', function () {
     });
 
     xit('should have tests', function () {
-
     });
 
 });

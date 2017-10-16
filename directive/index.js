@@ -60,9 +60,9 @@ DirectiveGenerator.prototype.files = function files() {
         this.template('directive_simple.js', 'directive/' + filename + '.js');
         this.template('spec_simple.js', 'test/unit/directive/' + filename + '.js');
 
-        cgUtils.addToFile('index.html', '<script src="directive/' + filename + '.js"></script>', cgUtils.DIRECTIVE_JS_MARKER, '  ');
-        cgUtils.addToFile('test/unit/index.html', '<script src="../../directive/' + filename + '.js"></script>', cgUtils.DIRECTIVE_JS_MARKER, '  ');
-        cgUtils.addToFile('test/unit/index.html', '<script src="directive/' + filename + '.js"></script>', cgUtils.DIRECTIVE_JS_TEST_MARKER, '  ');
+        cgUtils.addToFile('index.html', '<script src="directive/' + filename + '.js"></script>', cgUtils.DIRECTIVE_JS_MARKER, '    ');
+        cgUtils.addToFile('test/unit/index.html', '<script src="../../directive/' + filename + '.js"></script>', cgUtils.DIRECTIVE_JS_MARKER, '    ');
+        cgUtils.addToFile('test/unit/index.html', '<script src="directive/' + filename + '.js"></script>', cgUtils.DIRECTIVE_JS_TEST_MARKER, '    ');
         this.log.writeln(' updating'.green + ' %s', 'index.html');
     }
 
