@@ -12,8 +12,10 @@ Features
    * Build uses [grunt-ng-annotate](https://github.com/mgol/grunt-ng-annotate) so you don't have to use the Angular injection syntax for safe minification (i.e. you dont need `$inject` or `(['$scope','$http',...])`.
 * Integrates Bower for package management
 * Includes Yeoman sub-generators for directives, services, partials, and filters
-* Integrates LESS.
-    * Includes a LESS fle with general css classes that can be used across application
+* Integrates [Font Awesome](http://fontawesome.io)
+* Integrates LESS
+    * Includes a LESS file with general css classes that can be used across application
+    * Includes a LESS file with variables
 * Testable - Included Yeoman sub-generators also build test skeletons using mocha, chai, sinon sinon-chai and grunt-mocha. Run test via `grunt test`.
 
 
@@ -25,6 +27,7 @@ Below is an explanation of the folder structure.
 /css ......................... contains app-wide styles and co.
     app.less ................. main app styles
     general.less ............. general css classes that can be used across project
+    variables.less ........... LESS variables file
 /img ......................... images (not created by default but included in /dist if added)
 /js .......................... app global javascript files
     setup.js ................. angular module initialization and route setup

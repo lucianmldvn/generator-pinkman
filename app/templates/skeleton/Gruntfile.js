@@ -72,8 +72,11 @@ module.exports = function (grunt) {
                     {
                         src: ['img/**'],
                         dest: 'dist/'
+                    }, {
+                        src: ['bower_components/font-awesome/fonts/**'],
+                        dest: 'dist/'
                     }
-        ]
+                ]
             }
         },
         dom_munger: {
