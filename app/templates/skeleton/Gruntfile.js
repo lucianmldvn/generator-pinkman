@@ -1,4 +1,5 @@
-'use strict';
+/* jshint node:true */
+
 var path = require('path');
 
 var folderMount = function folderMount(connect, point) {
@@ -6,6 +7,8 @@ var folderMount = function folderMount(connect, point) {
 };
 
 module.exports = function (grunt) {
+    'use strict';
+
     // Project configuration.
     grunt.initConfig({
         connect: {
@@ -13,7 +16,7 @@ module.exports = function (grunt) {
                 options: {
                     port: 9001,
                     middleware: function (connect, options) {
-                        return [folderMount(connect, options.base[0])]
+                        return [folderMount(connect, options.base[0])];
                     }
                 }
             }
@@ -60,7 +63,7 @@ module.exports = function (grunt) {
         ngtemplates: {
             main: {
                 options: {
-                    module: '<%= _.slugify(appname) %>'
+                    module: '<%= _.trim(_.dasherize(appname), "-") %>'
                 },
                 src: ['partial/**/*.html', 'directive/**/*.html'],
                 dest: 'temp/templates.js'
@@ -130,7 +133,7 @@ module.exports = function (grunt) {
             },
             removecss: {
                 options: {
-                    remove: 'link',
+                    remove: 'link[data-remove!="exclude"]',
                     append: {
                         selector: 'head',
                         html: '<link rel="stylesheet" href="css/app.full.min.css">'
@@ -159,7 +162,7 @@ module.exports = function (grunt) {
             },
             dist: {
                 src: 'temp/app.css',
-                dest: 'temp/screen.css'
+                dest: 'temp/app.css'
             }
         },
         cssmin: {
@@ -240,7 +243,8 @@ module.exports = function (grunt) {
         'postcss',
         'dom_munger:readcss',
         'dom_munger:readscripts',
-        'ngtemplates', 'cssmin',
+        'ngtemplates',
+        'cssmin',
         'concat',
         'ngAnnotate',
         'uglify',
@@ -263,7 +267,6 @@ module.exports = function (grunt) {
 
     grunt.registerTask('default', [
         'test',
-        'less',
         'server',
         'watch'
     ]);
