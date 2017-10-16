@@ -47,7 +47,11 @@ module.exports = function (grunt) {
         },
         less: {
             production: {
-                options: {},
+                options: {
+                    modifyVars: {
+                        "fa-font-path": '"../fonts/font-awesome"'
+                    }
+                },
                 files: {
                     "temp/app.css": "css/app.less"
                 }
@@ -73,8 +77,13 @@ module.exports = function (grunt) {
                         src: ['img/**'],
                         dest: 'dist/'
                     }, {
-                        src: ['bower_components/font-awesome/fonts/**'],
-                        dest: 'dist/'
+                        /* FONT AWESOME */
+                        expand: true,
+                        cwd: 'bower_components/font-awesome/fonts',
+                        src: ['**'],
+                        dest: 'dist/fonts/font-awesome/',
+                        flatten: true,
+                        filter: 'isFile'
                     }
                 ]
             }
