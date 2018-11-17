@@ -214,7 +214,8 @@ module.exports = function (grunt) {
             test: {
                 src: ['test/unit/*.html'],
                 options: {
-                    run: true
+                    run: true,
+                    growlOnSuccess: false
                 }
             }
         }
